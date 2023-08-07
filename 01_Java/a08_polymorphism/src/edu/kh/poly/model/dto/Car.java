@@ -1,25 +1,27 @@
 package edu.kh.poly.model.dto;
 
-public class Car extends Object {
-	
+public class Car extends Object{
+			// extends Object : 미작성 시 컴파일러가 자동 추가
+
 	private int wheel; // 바퀴 개수
-	private int seat;
-	private String fuel;
+	private int seat;  // 좌석 수
+	private String fuel; // 연료
 	
-	// 기본생성자 자동완성 :  ctrl + space bar -> enter
+	// 기본 생성자 자동 완성 : ctrl + space bar  ->  enter 
 	public Car() {
-	// TODO Auto-generated constructor stub 
+		// TODO Auto-generated constructor stub
 	}
 
-	// 매개변수 자동완성 : alt + shift + s o
+	// 매개 변수 생성자 자동 완성 : alt + shift + s  ->  o
 	public Car(int wheel, int seat, String fuel) {
 		super();
 		this.wheel = wheel;
 		this.seat = seat;
 		this.fuel = fuel;
 	}
-
-	// getter, setter 자동 완성 : alt shift s -> r
+	
+	
+	// getter / setter 자동 완성 : alt + shift + s  ->  r
 	public int getWheel() {
 		return wheel;
 	}
@@ -44,14 +46,16 @@ public class Car extends Object {
 		this.fuel = fuel;
 	}
 
-	// toString() 오버라이딩 자동 완성
-	// alt shift s -> s
-	
+	// Object의 toString() 오버라이딩 자동 완성
+	// alt + shift + s -> s
 	@Override
 	public String toString() {
 		return "Car [wheel=" + wheel + ", seat=" + seat + ", fuel=" + fuel + "]";
 	}
-
+	
+	
+	
+	
 	
 	
 	
