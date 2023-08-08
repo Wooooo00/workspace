@@ -27,5 +27,10 @@ public class Spark extends Car{
 		return super.toString() + " / Spark [discountRate=" + discountRate + "]";
 	}
 
-	
+	@Override
+	public void bindingTest() { 
+		System.out.println("스파크 자료형");
+		
+	}
+		
 }

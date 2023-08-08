@@ -4,8 +4,6 @@ import java.util.Scanner;
 
 public class ArrayPrac {
 	
-	////////////////////////////////////////////////////////
-	
 	public void ex1() {
 		
 	int sum = 0;
@@ -27,8 +25,6 @@ public class ArrayPrac {
 	
 	}
 	
-	//////////////////////////////////////////////////////
-	
 	public void ex2() {
 		
 		int[] arr = new int[9];
@@ -48,8 +44,6 @@ public class ArrayPrac {
 		System.out.println("홀수 인덱스 합 : " + sum);
 	}
 	
-	//////////////////////////////////////////////////////
-	
 	public void ex3() {
 		
 		Scanner sc = new Scanner(System.in);
@@ -65,11 +59,9 @@ public class ArrayPrac {
 		}
 	}
 	
-	//////////////////////////////////////////////////////
-	
 	public void ex4() {
 		
-		Scanner sc = new Scanner(System.in);
+	//	Scanner sc = new Scanner(System.in);
 		
 		System.out.print("정수 입력 : ");
 		int input = sc.nextInt();
@@ -82,14 +74,12 @@ public class ArrayPrac {
 		}
 		
 		System.out.print("검색값 : ");
-		if(num == arr[i]) { 
+	//	if(num == arr[i]) { 
 		
 			
 		}
-	}
+//	}
 
-	//////////////////////////////////////////////////////
-	
 	public void ex5() {
 		
 		Scanner sc = new Scanner(System.in);
@@ -98,8 +88,6 @@ public class ArrayPrac {
 		
 		
 	}
-	
-	//////////////////////////////////////////////////////
 	
 	public void ex6() {
 		
@@ -128,8 +116,6 @@ public class ArrayPrac {
 		System.out.print("총합 : " + sum);
 	}
 	
-	
-	//////////////////////////////////////////////////////	
 	public void ex7() {
 		
 		System.out.print("주민등록번호 입력 : "); 
@@ -152,7 +138,4 @@ public class ArrayPrac {
 		}
 		
 	}
-	
-	//////////////////////////////////////////////////////
-	
 }
