@@ -9,7 +9,7 @@ public class StudentView {
 
 	// 필드
 	private Scanner sc = new Scanner(System.in);
-	private StudentService service = new StudentService();
+	private StudentService service = new StudentService(); 
 	
 	// 메뉴 표시 메서드
 	public void displayMenu() {
@@ -41,8 +41,8 @@ public class StudentView {
 			case 0 : System.out.println("[프로그램 종료]"); break;
 			default: System.out.println("잘못 입력");
 			}
-		}while( input != 0 );
-	}
+		}while( input != 0 ); // input이 0이 아닌 결과가 나오면 계속 반복. 
+	} 
 	
 	
 	// 학생 추가 화면

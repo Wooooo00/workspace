@@ -2,226 +2,255 @@ package edu.kh.control.condition.ex;
 
 import java.util.Scanner;
 
-// 실행 기능 담당
+// 실행 기능 담당 클래스
 public class ConditionEx {
 
 	public void test1() {
-		System.out.println("test1 수행");
-
+		System.out.println("test1() 수행");
 	}
-
+	
 	public void test2() {
-		System.out.println("test2 수행");
-
+		System.out.println("test2() 수행");
 	}
-
+	
+	
+	
 	// if 예제 1
 	public void ex1() {
-
+		
 		// 입력 받은 수가 양수인지 아닌지 검사
 		Scanner sc = new Scanner(System.in);
-
-		System.out.print("정수 입력 :");
-		int input = sc.nextInt();
-
-		/* 조건식 */
-		if (input > 0) { // input이 0보다 커서 조건식이 true인 경우 수행
-
-			System.out.println("양수입니다");
-			System.out.println("ex1() 종료");
-
-		}
-
-		if (input <= 0) {
-			System.out.println("양수 x");
-		}
-
-	}
-
-	// if 예제 2 - if - else
-	// if : 조건식이 true인 경우 수행
-	// else : 조건식이 false인 경우 수행
-
-	public void ex2() {
-		Scanner sc = new Scanner(System.in);
-
+		
 		System.out.print("정수 입력 : ");
 		int input = sc.nextInt();
-
-		if (input > 0) { // 양수인 경우
-			System.out.println("양수입니다");
-		} else { // if 조건식이 faslse인 경우 수행
-					// else는 조건식을 따로 적지 않음
-			System.out.println("양수가 아닙니다");
-
+		
+		 /* 조건식 */
+		if( input > 0 ) { // input이 0보다 커서 조건식이 true인 경우 수행
+			
+			System.out.println("양수 입니다.");
+			System.out.println("ex1() 종료");
+		}
+		
+		
+		if( input <= 0 ) {
+			System.out.println("양수가 아닙니다.");
+			System.out.println("ex1() 끝!");
+		}
+		
+	}
+	
+	
+	// if 예제 2  -   if - else
+	// if : 조건식이 true인 경우 수행
+	// else : 조건식이 false인 경우 수행
+	public void ex2() {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("정수 입력 : ");
+		int input = sc.nextInt();
+		
+		if(input > 0) { // 양수인 경우
+			System.out.println("양수 입니다.");
+		} 
+		
+		else { // if 조건식이 false인 경우(양수가 아닌 경우) 수행
+			// * else는 조건식을 따로 적지 않는다! *
+			System.out.println("양수가 아닙니다.");
 		}
 	}
-
-	// if 예제 3 - 중첩 if문
+	
+	
+	
+	// if 예제 3 -  중첩 if문
 	public void ex3() {
 		// 양수, 음수, 0 구분
-
+		
 		Scanner sc = new Scanner(System.in);
-
-		System.out.print("정수 입력 :  ");
+		
+		System.out.print("정수 입력 : ");
 		int input = sc.nextInt();
-
-		if (input > 0) {
-			System.out.println("양수입니다.");
-		} else {
-
-			if (input == 0) {
-				System.out.println("0입니다.");
+		
+		if( input > 0 ) { // 양수인 경우
+			System.out.println("양수 입니다.");
+			
+		} else { // 양수가 아닌 경우(0, 음수)
+			
+			// 중첩 if문
+			if(input == 0) {
+				System.out.println("0 입니다.");
 			} else {
-				System.out.println("음수입니다.");
+				System.out.println("음수 입니다.");
 			}
 		}
 	}
-
 	
-	// if 예제 4 - if - else if - else
-	public void ex4() { 
-		// 달을 입력받아 해당하는 달의 계절을 출력
+	
+	
+	
+	// if 예제 4 -   if - else if - else
+	public void ex4() {
+		// 달(월)을 입력 받아 해당 달의 계절을 출력
+		
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.print("달을 입력해주세요 : "); 
+		System.out.print("달(월)을 입력해주세요 : ");
 		int month = sc.nextInt();
 		
-		String season; // 변수 선언
-		               // 아직 초기화 하지 않음 -> 조건문 작성 과정에서 할 예정
+		String season; // String 변수 선언
+					// 초기화 X -> 조건문에서 초기화할 예정
 		
-		if(month >= 3 && month <= 5 ) {// 봄 3,4,5 
-			season = "봄"; 
+		if(month >= 3 && month <= 5 ) { // 봄(3,4,5)
+			season = "봄";
 		}
-		else if(month >= 6 && month <= 8) {
+		
+		else if(month >= 6 && month <= 8) { // 여름(6,7,8)
 			season = "여름";
-	    }
-		else if(month >= 9 && month <= 11) {
-			season = "가을"; 
 		}
-		else if(month == 12 || month == 1 || month == 2) {
+		
+		else if(month >= 9 && month <= 11) { // 가을(9,10,11)
+			season = "가을";
+		}
+		
+		else if(month == 12 || month == 1 || month == 2) { // 겨울(12, 1, 2)
 			season = "겨울";
 		}
-		else { 
-			season = "오류";
+		
+		else {
+			season = "잘못 입력함";
 		}
 		
+		
+		// 결과 출력
 		System.out.println(season);
 		
-		// 선언된 변수(지역 변수)는 반드시 사용되기 전 초기화 되어야 한다. 
+		// *********************************************
+		// 선언된 변수(지역 변수)는
+		// 반드시 사용되기 전 초기화가 되어 있어야 한다!
+		// *********************************************
 		
 	}
-	// --------------------------------------------------------------------------
 	
-	// if 예제 5 
-	// 나이를 입력 받아 13세 이하 -> "어린이" 
-	// 13세 초과 19세 이하면 "청소년" 
-	// 19세 초과는 "성인" 
-	// 0세 미만, 100세 초과는 "잘못 입력"
-	public void ex5() { 
+	
+	// if 예제 5
+	public void ex5() {
+		// 나이를 입력 받아
+		// 13세 이하면 "어린이"
+		// 13세 초과, 19세 이하면 "청소년"
+		// 19세 초과는 "성인"
+		// 0세 미만, 100세 초과는 "잘못 입력"
 		
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.print("나이를 입력해주세요. ");
-		
+		System.out.print("나이 입력 : ");
 		int age = sc.nextInt();
 		
-		String group;
+		String result; // 결과 저장 변수 선언
 		
-		if(age <= 13 && age <= 0) { 
-			group = "어린이";
+		
+		if(age < 0 || age > 100) {
+			result = "잘못 입력";
 			
-		}
-		
-		else if(age < 19 && age > 13) {
-			group = "청소년";
-		
-		}
-		
-		//else if(//age <= 100 && //age > 19) { 
-			group = "성인";
-	
-		}
-		
-		//else {
-			group = "0 ~ 100사이의 수를 입력";
-		}
-		
-	
-		System.out.println(group);
-		
-		
-		// -------------------------------------------------------
-		
-		/*if(age <= 13) {
-			System.out.println("어린이");	
-		} else if(age > 13 && age <= 19) {
-			System.out.println("청소년");
-		} else {
-			System.out.println("성인");
-		}
-		
-		if(age < 0 || age > 100) { 
-			System.out.println("오류");
-		} else { 
+		} else { // 잘 입력 함
+			if(age <= 13) {
+				result = "어린이";
 			
+			} else if(age <= 19) {
+				result = "청소년";
+				
+			} else {
+				result = "성인";
+			}
 		}
-	    */
+		
+		System.out.println(result);
 		
 		
 		
+		
+//		if(age <= 13 && age >= 0) {
+//			System.out.println("어린이");
+//		
+//		} else if(age <= 19) {
+//			System.out.println("청소년");
+//			
+//		} else if(age <= 100){
+//			System.out.println("성인");
+//		
+//		} else {
+//			System.out.println("잘못 입력");
+//		}
+		
+	}
 	
-	// ----------------------------------------------------------------------------
-	//if 예제 6번 
-	public void ex6() { 
+	
+	
+	// if 예제 6
+	public void ex6() {
+		// 놀이기구 탑승 제한 검사
+		
+		// 나이가 12세 이상, 키 140.0cm 이상일 경우에만 "탑승 가능"
+		// 나이가 12세 미만 : "적정 연령이 아닙니다."
+		// 키 140.0cm 미만  : "적정 키가 아닙니다."
+		// 나이를 0세 미만 또는 100세 초과 입력 시 : "잘못 입력 하셨습니다."
+		
+		// [실행화면]
+		// 나이 입력 : 15
+		// 키 입력 : 170.5
+		// 탑승 가능
+		
+		/* 나이 제한 */
+		// 나이 입력 : 10
+		// 키 입력 : 150.5
+		// 적정 연령이 아닙니다.
+		
+		/* 키 제한 */
+		// 나이 입력 : 12
+		// 키 입력 : 135.3
+		// 적정 키가 아닙니다.
+		
+		/* 나이 0 미만 또는 100 초과 */
+		// 나이 입력 : 120
+		// 키 입력 : 183.3
+		// 잘못 입력 하셨습니다.
+		
 		
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("나이를 입력해주세요. ");
+		System.out.print("나이 입력 : ");
 		int age = sc.nextInt();
 		
-		
-		
-		
-		
-		System.out.println("키를 입력해주세요. ");
+		System.out.print("키 입력 :");
 		double height = sc.nextDouble();
 		
+//		if(age < 0 || age > 100) {
+//			System.out.println("잘못 입력 하셨습니다.");
+//		
+//		} else if(age < 12) {
+//			System.out.println("적정 연령이 아닙니다.");
+//		
+//		} else if(height < 140.0) {
+//			System.out.println("적정 키가 아닙니다.");
+//			
+//		}  else {
+//			System.out.println("탑승 가능");
+//		} 
 		
 		
+		if(age < 0 || age > 100) {
+			System.out.println("잘못 입력 하셨습니다.");
 		
-		
-		
-		
-		System.out.println(age);
-		System.out.println(height);
-		
-		
+		} else {
+			if(age < 12) {
+				System.out.println("적정 연령이 아닙니다.");
+			} else if(height < 140.0) {
+				System.out.println("적정 키가 아닙니다.");
+			}  else {
+				System.out.println("탑승 가능");
+			} 
+		}
 		
 	}
-
-	// 나이가 12세 이상이면서 키가 140.0 이상인 사람 
-	
-  //if 나이가 12미만 
-	
-	
-	
-	// ----------------------------------
-	
-	// if(age >= 12 && height >= 140.0) { 
-	// System.out.println 
-	
-	// else if (age < 12) { 
-	
-	// else 
-	
-
-	
-	
-	
-	
-	
-	
 	
 	
 	

@@ -4,8 +4,8 @@ package a05.oop.basic;
 public class Nation {
 	
 	// 속성
-	String pNo;
-	String name;
+	private String pNo;
+	private String name;
 	String address;
 	String phone;
 	char gender;
@@ -29,7 +29,7 @@ public class Nation {
 	
 	public void introduce() {
 		
-		System.out.printf("저의 이름은 %s이고, 직업은 %s입니다. \n" , name, job);
+		System.out.printf("저의 이름은 %s이고, 직업은 %s입니다. \n" , getName(), job);
 		
 		// 자기 소개 기능
 		
@@ -49,6 +49,27 @@ public class Nation {
 	public String getJob() { 
 		return job;
 		
+	}
+
+	public void 납세의의무() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public String getpNo() {
+		return pNo;
+	}
+
+	public void setpNo(String pNo) {
+		this.pNo = pNo;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 	// public //

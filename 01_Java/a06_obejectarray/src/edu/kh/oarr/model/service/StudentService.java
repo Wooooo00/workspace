@@ -6,6 +6,9 @@ import edu.kh.oarr.model.dto.Student;
 
 public class StudentService {
 
+	
+	// private Student[] studentArr = new Student[10];
+	
 	// 필드
 	private Student[] studentArr = new Student[10];
 	// 학생 객체 참조 변수 10개의 묶음 Student[] 을 할당하고
@@ -26,10 +29,14 @@ public class StudentService {
 
 		Random random = new Random(); // 랜덤 객체 생성(자바에서 제공)
 		
+		
+		// Random 변수 = new Random();
 		for(int i=0 ; i<studentArr.length ; i++) {
 			// studentArr[3] 부터 참조하는 학생 객체가 없음
 			// studentArr[3] 부터 저장된 값은 null
 			// * null : 참조하는 객체가 없음을 뜻하는 값 *
+			
+			
 			
 			if(studentArr[i] == null) {
 				break; // 학생 객체가 없으면 반복문 멈춤
