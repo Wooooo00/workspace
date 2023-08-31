@@ -28,9 +28,14 @@ WHERE DEPT_CODE = 'D9';
 
 SELECT EMP_NAME, DEPT_CODE
 FROM EMPLOYEE
-WHERE DEPT_CODE = (SELECT DEPT_CODE FROM EMPLOYEE )
+WHERE DEPT_CODE = (SELECT DEPT_CODE FROM EMPLOYEE
+                   WHERE EMP_NAME = '노옹철');
+                  
+                  
+SELECT EMP_NAME, DEPT_CODE
+FROM EMPLOYEE
+WHERE DEPT_CODE = (SELECT DEPT_CODE FROM EMPLOYEE
                    WHERE EMP_NAME = '노옹철';
-                   
 
                   
 -- 서브쿼리 예시 2.
@@ -55,6 +60,14 @@ WHERE SALARY >= 3047663;
 SELECT EMP_ID, EMP_NAME, DEPT_CODE, SALARY
 FROM EMPLOYEE
 WHERE SALARY >= (SELECT AVG(SALARY) FROM EMPLOYEE);               
+
+
+SELECT EMP_ID, EMP_NAME, DEPT_CODE, SALARY
+FROM EMPLOYEE
+WHERE SALALY >= (SELECT AVG(SALARY)                  
+					FROM EMPLOYEE);
+
+
 
 
 -------------------------------------------------------------------
@@ -437,6 +450,7 @@ WHERE EXTRACT(YEAR FROM HIRE_DATE) = 2000);
 
 
 
+
 -- WHERE TO_CHAR(HIRE_DATE, 'YYYY') = '2000'
 
 -- WHERE SUBSTR(TO_CHAR(HIRE_DATE), 1, 4) = '2000'
@@ -507,6 +521,14 @@ WHERE SALARY > (SELECT AVG(SALARY)
 				 	WHERE SUB.JOB_CODE = MAIN.JOB_CODE);
 
 
+
+							
+
+
+
+				 
+				 
+				 
 				 
 				 
 				 
@@ -578,33 +600,108 @@ WHERE SUB.EMP_ID = MAIN.MANAGER_ID);
 
 -- 각 직원들이 속한 직급의 급여 평균 조회
 
+-- 모든 사원의 사원명, 급여, 전체 사원 급여 평균 조회
+SELECT EMP_NAME, SALARY, (SELECT TRUNC(AVG(SALARY)) FROM EMPLOYEE) "전체 사원 급여 평균"
+FROM EMPLOYEE; 
 
+-- 각 직원들이 속한 직급의 급여 평균 조회
+SELECT EMP_NAME, JOB_CODE, SALARY,
+(
+SELECT TRUNC(AVG(SALARY)) 
+FROM EMPLOYEE SUB
+WHERE SUB.JOB_CODE = MAIN.JOB_CODE
+) "같은 직급 급여 평균"
+FROM EMPLOYEE MAIN ;
 
 -- 모든 사원의 사번, 이름, 관리자사번, 관리자명을 조회
 -- 단 관리자가 없는 경우 '없음'으로 표시
 -- (스칼라 + 상관 쿼리)
 
+SELECT EMP_ID, EMP_NAME, MANAGER_ID,
 
+NVL((SELECT EMP_ID
+FROM EMPLOYEE SUB
+WHERE SUB.EMP_ID = MAIN.MANAGER_ID), '없음' 
+) "관리자명"
+FROM EMPLOYEE MAIN; 
 
 
 
 -----------------------------------------------------------------------
 
-
+--------> SQL 안에 작성된 볼 수만 있는 테이블
 -- 7. 인라인 뷰(INLINE-VIEW)
 --    FROM 절에서 서브쿼리를 사용하는 경우로
 --    서브쿼리가 만든 결과의 집합(RESULT SET)을 테이블 대신에 사용한다.
+
+
+SELECT 사번, EMP_NAME FROM 
+		(SELECT EMP_ID 사번, EMP_NAME 이름, DEPT_TITLE 부서명
+		FROM EMPLOYEE 
+		LEFT JOIN DEPARTMENT ON(DEPT_CODE = DEPT_ID));
+
 
 -- 인라인뷰를 활용한 TOP-N분석
 -- 전 직원 중 급여가 높은 상위 5명의
 -- 순위, 이름, 급여 조회
 
+-- 1) 전 직원의 급여 높은 순으로 조회 
+SELECT EMP_NAME, SALARY 
+FROM EMPLOYEE
+ORDER BY SALARY DESC;
 
+-- 2) ROWNUM으로 행 번호 부여하기
+--> 조회 결과에 행 번호 추가하는 가상 컬럼
+-- (SELECT절 해석 시 같이 해석됨)
+-- ROWNUM 행 번호
+ 
+SELECT ROWNUM, EMP_NAME
+FROM EMPLOYEE; 
 
+-- 3) 
+/*2*/SELECT ROWNUM, EMP_NAME, SALARY 
+/*1*/FROM EMPLOYEE
+/*3*/ORDER BY SALARY DESC;
 
+-- ORDER BY가 제일 마지막에 해석 되어 정렬이 의도대로 되지 않는 문제가 발생
+-- 인라인 뷰를 이용하여 해결
+
+SELECT ROWNUM, EMP_NAME, SALARY     
+FROM 
+(SELECT EMP_NAME, SALARY 
+FROM EMPLOYEE
+ORDER BY SALARY DESC)
+WHERE ROWNUM < 6;
+
+SELECT ROWNUM, EMP_NAME, SALARY
+FROM 
+(SELECT EMP_NAME, SALARY
+FROM EMPLOYEE
+ORDER BY SALARY DESC)
+
+-- * ROWNUM 사용 시 주의사항 * 
+-- ROWNUM을 WHERE절에 사용할 때 
+-- 항상 범위에 1부터 연속적인 범위가 포함 되어야 한다.
+
+SELECT ROWNUM, EMP_NAME, SALARY 
+FROM 
+(SELECT EMP_NAME, SALARY 
+FROM EMPLOYEE
+ORDER BY SALARY DESC)
+WHERE ROWNUM < 6;
+-- WHERE ROWNUM = 1 실행 가능
+-- WHERE ROWNUM = 2 실행 불가 (1부터 시작한다)
 
 -- 급여 평균이 3위 안에 드는 부서의 부서코드와 부서명, 평균급여를 조회
 
+SELECT * FROM 
+(
+SELECT DEPT_CODE, DEPT_TITLE, ROUND(AVG(SALARY)) 평균급여
+FROM EMPLOYEE
+LEFT JOIN DEPARTMENT ON(DEPT_CODE = DEPT_ID)
+GROUP BY DEPT_CODE, DEPT_TITLE
+ORDER BY 평균급여 DESC)
+WHERE ROWNUM < 4;
 
 ------------------------------------------------------------------------
 
@@ -617,18 +714,90 @@ WHERE SUB.EMP_ID = MAIN.MANAGER_ID);
 -- 전 직원의 급여 순위 
 -- 순위, 이름, 급여 조회
 
+SELECT ROWNUM, EMP_NAME, SALARY 
+FROM (SELECT EMP_NAME, SALARY 
+FROM EMPLOYEE 
+ORDER BY SALARY DESC)
+WHERE ROWNUM =< 10;
+
+WITH TOP_SALARY AS (SELECT EMP_NAME, SALARY 
+					FROM EMPLOYEE 
+					ORDER BY SALARY DESC)
+					
+SELECT ROWNUM, EMP_NAME, SALARY
+FROM TOP_SALARY
+WHERE ROWNUM < 11;
+
+
+
 --------------------------------------------------------------------------
 
 
--- 9. RANK() OVER / DENSE_RANK() OVER
+-- 9. RANK() OVER () / DENSE_RANK() OVER
 
--- RANK() OVER : 동일한 순위 이후의 등수를 동일한 인원 수 만큼 건너뛰고 순위 계산
+-- RANK() OVER () : 동일한 순위 이후의 등수를 동일한 인원 수 만큼 건너뛰고 순위 계산
 --               EX) 공동 1위가 2명이면 다음 순위는 2위가 아니라 3위
 
+-- 급여를 많이 받는 순서로 조회
+SELECT EMP_NAME, SALARY
+FROM EMPLOYEE
+ORDER BY SALARY DESC; 
+
+-- 등수를 포함하여 급여를 많이 받는 순서 조회
+SELECT RANK() OVER(ORDER BY SALARY DESC), EMP_NAME, SALARY
+FROM EMPLOYEE;
 
 
 -- DENSE_RANK() OVER : 동일한 순위 이후의 등수를 이후의 순위로 계산
 --                     EX) 공동 1위가 2명이어도 다음 순위는 2위
+
+SELECT DENSE_RANK() OVER(ORDER BY SALARY DESC), EMP_NAME, SALARY
+FROM EMPLOYEE;
+
+
+--------------------------------------------------------------------------------------------
+
+/* SELECT 관련 KEYPOINT 
+ * 1) 테이블 구조 파악
+ * 2) SELECT 해석 순서 + 별칭 사용이 가능한 부분 
+ * 	  EX) ORDER BY 절에서는 SELECT절에서 해석된 별칭 사용이 가능하다
+ * 		  인라인뷰에서 지정된 별칭을 메인 쿼리에서도 똑같이 사용해야 된다.
+ * 
+ * 3) 여러 테이블을 이용한 SELECT 진행 시 
+ * 	  컬럼명이 겹치는 경우 이를 해결하는 방법
+ * 	  EX) 셀프 조인
+ * 	  EX) 상관 쿼리
+ *    EX) 다른 테이블이라도 컬럼명이 같을 경우
+ * 
+ * SELECT EMP_NAME, JOB_CODE, JOB_NAME
+ * FROM EMPLOYEE
+ * JOIN JOB USING(JOB_CODE)
+ * 또는 
+ * JOIN JOB J ON(E.JOB_CODE = J.JOB_CODE)
+ * 
+ * -- 오라클 방식 -- 
+ * SELECT EMP_NAME, E.JOB_CODE, JOB_NAME
+ * FROM EMPLOYEE E, JOB J
+ * WHERE E.JOB_CODE = J.JOB_CODE;
+ * 
+ * 4. 조회하려는 데이터(목적, 요구사항)을 확실하게 파악
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ */
+
+
+
+
+
+
+
+
+
+
 
 
 
