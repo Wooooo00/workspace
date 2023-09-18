@@ -20,7 +20,7 @@ public class JDBCExample3 {
 		// 최소 급여 : 1000000
 		// 최대 급여 : 3000000 
 		
-		// 1. jdbc 객체 참조 변수 생성 ( Connection, Statement(java sql !! , ResultSet)
+		// 1. jdbc 객체 참조 변수 생성 ( Connection, Statement(java sql !!) , ResultSet)
 		// 2. DriverManager를 이용해 Conncection 객체 생성
 		// 3. SQL 작성
 		// 4. statement 

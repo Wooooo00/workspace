@@ -1,5 +1,7 @@
 package edu.kh.oop.basic;
 
+import a05.oop.basic.Nation;
+
 /* 객체란?
  * 
  * - 현실 : 속성(data)과 기능(method)를 가지고 있는 식별 가능한 것
@@ -22,6 +24,7 @@ public class BasicRun {
 		
 		// Nation 클래스를 이용해서 객체 생성하기
 		Nation n1 = new Nation();
+		
 		
 		// 클래스 == 설계도 == 사용자 정의 자료형
 		

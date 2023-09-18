@@ -83,6 +83,11 @@ public class JDBCExample1 {
 			 
 			 stmt = conn.createStatement(); 
 			 
+			 // SQL 작성 
+			 // String sql = " " ;
+			 
+			 // Statement 객체 생성
+			 stmt = conn.createStatement();
 			 
 			 
 			 
@@ -91,6 +96,9 @@ public class JDBCExample1 {
 			 //			 executeQuery() : SELECT문을 수행하고 결과 집합(ResultSet)을 반환
              //			 executeUpdate() : DML을 수행하고 결과 행의 수(int)를 반환
 
+			 
+			 
+			 
 			 // 6. SQL(SELECT) 결과가 담겨있는 ResultSet(rs)를 한 행씩 반복 접근하며 각 행의 컬럼값을 얻어와 출력
 			 
 			 while(rs.next()) {

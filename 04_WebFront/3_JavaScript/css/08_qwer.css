@@ -1,0 +1,11 @@
+
+.box > div{
+   width: 50px;
+   height: 50px;
+   border: 1px solid black;
+   flex-direction: row;
+   justify-content: center;
+}
+
+
+   

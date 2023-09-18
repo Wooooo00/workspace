@@ -1,0 +1,66 @@
+/* 일반 구조 선택자 */ 
+/* :first-child : 형제 관계 중 첫 번째 요소 */ 
+#test1 > p:first-child{
+   background-color: red;
+   color: white;
+} 
+
+/* :nth-child(숫자) : 형제 관계 중 숫자 번째 요소 선택 */
+#test1 > p:nth-child(2){ /* p태그 중 2번 째 */
+   background-color: yellow;
+}
+
+#test1 > p:nth-child(4){ /* p태그 중 2번 째 */
+   background-color: pink; 
+}
+
+/* :nth-child(수열) : 형제 관계 중 수열 번째 요소 선택 */
+#test1 > p:nth-child(2n+1){
+   font-weight: bold;
+   font-size: 24px;
+   font-style: italic;
+}
+
+/* : last-child : 형제 관계의 요소 중 마지막 요소 */ 
+/* keypoint : 선택된 형제<p> 중 마지막을 찾는 게 아니라 
+   모든 형제 중 선택된 요소<p> 중 마지막인가를 확인 */
+
+#test1 > p:last-child{
+   background-color: orange;
+}
+
+/* : nth-last-child(숫자|수열) : 
+   뒤에서부터 숫자|수열 번째 요소 선택 */
+#test1 > p:nth-last-child(2){
+   color:hotpink;
+}
+
+/* 형태 구조 선택자 */ 
+/* :first-of-type : 같이 선택된 형제 중 첫 번째 요소*/ 
+#test2> p:first-of-type{
+   background-color: tomato;
+}
+
+/* :last-of-type : 같이 선택된 형제 중 마지막 요소*/
+#test2> p:last-of-type{
+   background-color: deepskyblue;
+}
+
+/* nth-of-type(숫자|수열) : 같이 선택된 형제 중 숫자|수열 번째 요소 */
+#test2 > p:nth-child(2n+1){
+   font-family: "궁서체";
+   font-size: 40px;
+}
+
+/* :nth-last-of-type(숫자|수열) : 
+같이 선택된 형제 중 뒤에서부터 숫자|수열 번째 요소 */ 
+
+#test2 > p:nth-last-of-type(2n){
+   background-color: purple;
+}
+
+/* 부정 선택자 (:not()) */
+#test3 > li:not(:nth-of-type(3n)){
+   background-color: purple;
+} 
+

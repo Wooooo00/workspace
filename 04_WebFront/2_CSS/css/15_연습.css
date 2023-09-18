@@ -1,0 +1,196 @@
+*{
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+ }
+ 
+ body{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   min-height: 100vh;
+ }
+ 
+ main{
+   width : 1140px;
+   flex-grow: 1; 
+   min-height: 500px;
+ }
+ 
+ /* ------------------------- header ------------------------- */
+ header{
+   height: 200px;
+   display: flex;
+ }
+ 
+ header > section:nth-of-type(1) { width: 15%;}
+ header > section:nth-of-type(2) { width: 85%;} 
+
+ /* ---- 홈 로고 부분 ---- */
+
+ header > section:first-of-type{ /* 로고 가운데 정렬 */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+ 
+ #home-logo{
+  margin-top: 50px;
+   width: 200px;
+   height: auto; 
+ }
+
+a{text-decoration: none;}
+
+div{
+  color: black;
+  font-size: 80px;
+  font-weight: 800;
+  margin-top: 55px;
+  margin-left: 330px;
+}
+
+
+  
+
+.list{
+  font-size: 30px;
+  margin-top: 90px;
+  margin-right: 35px;
+  
+
+}
+
+.login-in{
+  font-size: 30px;
+  margin-top: 90px;
+  margin-right: 35px;
+  color: black;
+  
+}
+
+.cart{
+  font-size: 30px;
+  margin-top: 90px;
+  margin-right: 35px;
+}
+
+.search{
+  font-size: 30px;
+  margin-top: 90px;
+  margin-right: 35px;
+
+}
+
+ /* ------------------------- nav ------------------------- */
+ nav{
+  font-weight: bold;
+  height: 50px;
+  margin-top: 60px;
+  
+   position: sticky;
+   top: 0; 
+   color: rgb(0, 0, 0);
+  
+   
+   background-color: white;
+   z-index: 1000;
+   border-bottom : 3px solid ; 
+ }
+ 
+ nav > ul{
+  
+   display: flex;
+   list-style: none; 
+   height: 100%;
+   justify-content: center;
+   
+ }
+ 
+ nav li{
+   flex : 0    1     150px;
+    
+ }
+ 
+ nav a{
+  
+   text-decoration: none; 
+   color : black;
+   font-size: 23px;
+   font-weight: bold;
+   padding : 20 20px; 
+   display: block; 
+   text-align: center; 
+   height: 100%;
+   border-radius: 5%;
+   transition-duration: 0.15s;
+   
+ }
+ 
+ nav a:hover{
+   background-color: rgb(0, 0, 0);
+   color: white;
+ }
+
+ /* ------------------------- content ------------------------- */
+ .content > image{
+  outline: auto;
+  margin-top: 30px;
+  width: 15px;
+  height: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ } 
+ 
+ button{
+  font-style: inherit;
+  border-radius: 7px;
+  font-size: large;
+  width: 500px;
+  height: 50px;
+  margin:40px 300px 40px;
+  align-content: center;
+ }
+
+ 
+
+
+
+ /* ------------------------- footer ------------------------- */
+ 
+ footer{
+   width: 100%;
+   height: 200px;
+   
+
+   background-color: #e6e6e6;  
+ 
+   display: flex;
+   justify-content: center;
+   align-items: center; 
+   flex-direction: column;
+ }
+ 
+ footer > p{
+   font-weight: bold;
+   margin: 16px 0; 
+ }
+ 
+ footer > article > *{
+   font-size: 15px; 
+ }
+ 
+ footer a {
+   font-style: oblique;
+   color : black; 
+   text-decoration: none;  
+ }
+ 
+ footer span{
+   padding : 0 10px; 
+ }
+
+
+
+

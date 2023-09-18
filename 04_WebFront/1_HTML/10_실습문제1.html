@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>10_실습문제1</title>
+</head>
+
+<body>
+  <!--
+   고객명,전화번호,E-mail -> 단순 텍스트  
+   피자 선택 select 필드 레전드 피자 사이즈 
+                    필드 레전드 토핑 선택 
+                    요일 
+  --> 
+
+  <form action="주문 내역.html" method="get" target="_blank">
+
+   
+   고객명   : <input type="text" size="20" maxlength="30" name="customerName"><br><br>
+   
+   전화번호 : <input type="tel" size="15" maxlength="30" name="customerTel"> <br><br>
+   
+   이메일   : <input type="text" size="20" maxlength="30"> <br><br>
+
+   <button type="submit">확인</button>
+
+  </form>
+
+  <br>
+ 
+ 피자 선택 : <select name= "피자를 선택">
+   <option value="1111">피자 선택</option>
+   <option>포테이토 피자</option>
+   <option>콤비네이션</option>
+   <option>와규 피자</option>
+   <option>시금치 피자</option> 
+   
+   <!--option에 value가 작성되어 있다면 value 제출-->
+   <!--option에 value가 작성되어 있지 않으면 태그 사이 내용이 제출-->
+  
+   </select>
+
+   <br><br>
+
+   <fieldset>
+
+
+
+      <legend>피자 사이즈</legend>
+
+      
+      
+      <input type="radio", name="Small">Small<br><br>
+      <input type="radio", name="Medium">Medium<br><br>
+      <input type="radio", name="Large">Large<br><br>
+
+
+   </fieldset>
+   
+   <br><br>  
+   
+
+   <fieldset>
+
+      <legend>토핑선택</legend>
+
+      
+   <label for=""></label> <input type="checkbox" name="토핑선택" id="">베이컨<br><br>
+   <label for=""></label> <input type="checkbox" name="토핑선택" id="">치즈<br><br>
+   <label for=""></label> <input type="checkbox" name="토핑선택" id="">양파<br><br>
+   <label for=""></label> <input type="checkbox" name="토핑선택" id="">버섯<br><br>
+     
+   </fieldset>
+
+   <br>
+ 
+   희망 배송시간 : 
+   
+   <input type="time"> 
+
+   <br><br><br><br>
+   
+   배송 요청사항 : 
+
+   <textarea name="inputId" cols="60" rows="5"
+      placeholder="작성해주세요" style="resize: none;" > 예) 공동현관 비밀번호, 문 앞에 두고 벨 눌러 주세요.
+                              </textarea>
+      <br><br><br><br>
+
+
+         <form action="주문 내역.html" method="get" target="_blank">
+
+         <button type="button" id=user1>주문하기</button>
+
+      </form>                        
+
+      
+      <!--
+         <script>
+         document.getElementById("btn2").addEventListener("click", () => {
+            alert("제출되었습니다.");
+         });
+      </script> -->
+
+
+
+
+</body>
+</html>

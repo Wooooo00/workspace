@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주문 내역</title>
+</head>
+<body>
+
+  
+
+   <h3>주문자 : <span id="customerName"></span></h3> <!-- -->
+   <h3>전화번호 : <span id="customerTel"></span></h3>
+   
+
+
+
+
+  
+  
+  
+     <script>
+         const customerName = document.getElementById("customerName");
+         const customerTel = document.getElementById("customerTel");
+         
+         const params = new URL(location.href).searchParams;
+         customerName.innerText = params.get("customerName");
+         customerTel.innerText = params.get("customerTel");
+  
+  
+     </script>
+
+
+    
+   
+</body>
+</html>
+   
+</body>
+</html>

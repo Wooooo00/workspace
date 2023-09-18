@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>11_실습문제</title>
+</head>
+<body>
+   
+   <fieldset>
+
+      <legend>납품자 정보</legend>
+
+      <ol>
+         <li>납품자명 : <input type="text" size="20" maxlength="30"> </li> <br>
+         <li>email : <input type="email" size="20" maxlength="30" value="@ 넣어주세요"></li> <br>
+         <li>홈페이지 <input type="url" size="20" maxlength="30" value="https://"></li> <br>
+         <li>지역 : <select>
+            <option>지역 선택</option>
+            <option>서울</option>
+            <option>부산</option>
+            <option>경기도</option>
+            <option>강원도</option>
+            <option>충청북도</option> 
+            </select>
+          
+         </option>
+         
+   </fieldset>
+   <br>
+   <fieldset>
+
+      <legend>납품 정보</legend>
+
+      <ul>
+         <li>상품명 : <input type="text" size="20" maxlength="30"> </li> <br>
+         <li>상품 수량 : <input type="number" min="0" max="100" value="0"> (1회 최대 수량 100까지입니다.) </li><br> 
+         <li>납품 등급  <input type="range" min="0" maxlength="5"></li> <br>
+         <br>
+         <li>기타 사항 : <textarea name="inputId" cols="30" rows="5"></textarea></li>
+      </ul>
+   </fieldset>
+   <br>
+
+   <button type="submit">Send Message</button> 
+
+   
+</body>
+</html>
