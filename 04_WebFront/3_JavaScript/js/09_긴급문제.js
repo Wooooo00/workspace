@@ -1,5 +1,3 @@
-document.querySelector("[name='fw']:checked") 
-
 // const inputwidth = document.getElementById("input-width");
 // const inputFontsize = document.getElementById("input-fontsize");
 // const inputFontColor = document.getElementById("input-fontcolor");
@@ -18,6 +16,5 @@ document.querySelector("[name='fw']:checked")
 
 document.getElementById("input-width").addEventListener('click', function(){
     const inputWidth = document.getElementById('input-width');
-    .style.width = inputWidth.value;
+    this.style.width = inputWidth.value;
 });
-
