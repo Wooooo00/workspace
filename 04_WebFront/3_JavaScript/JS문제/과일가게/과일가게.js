@@ -38,7 +38,7 @@ countBtn.addEventListener("click", () => {
    
    const result = document.getElementById("result");
    result.innerText = str + " 총합 " + sum + "원" ;
-
+   
 });
 
 
