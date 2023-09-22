@@ -1,0 +1,15 @@
+* {
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+}
+
+.bingo-area{
+   justify-content: center;
+   align-items: center;
+   display: flex;
+}
+
+.bingo-row{
+display: flex;
+}

@@ -1,0 +1,14 @@
+code{
+   margin: 20px;
+   padding: 10px;
+   border: 1px solid black;
+   white-space: pre-wrap; /* 내용을 작성된 형태 그대로 출력(pre) 태그 */ 
+   display: block;
+   border-radius: 5px;
+}
+
+.important{
+   color: crimson;
+   font-size: 40px;
+   
+}
