@@ -1,0 +1,35 @@
+*{ 
+   box-sizing: border-box;
+}
+
+body{   
+   background-color: rgb(161, 213, 255);
+  
+}
+
+table{
+   display: flex;
+   width: 800px;
+   height: 700px;
+   margin: auto;
+   background-color: rgb(241, 241, 241);
+   align-items: center;
+   justify-content: space-evenly;
+   flex-direction: column;
+}
+
+table > td{
+
+   margin-top: 60px;
+}
+
+#sign-up{
+   width: 200px;
+   height: 50px;
+   border-radius: 5px;
+   background-color: rgb(217, 255, 159);
+   margin-bottom: 150px;
+
+}
+
+

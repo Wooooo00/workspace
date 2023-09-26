@@ -1,0 +1,45 @@
+<div class="container">
+
+      <div class="ele1">아이디  ---------------------------------</div>
+
+      <div class="ele2">패스워드  ---------------------------------</div> 
+                                  
+
+      <div class="ele3">패스워드 확인  -----------------@----------------</div>
+
+      <div class="ele4">이메일  ---------------------------------</div>
+
+      <div class="ele5">주소  ---------------------------------</div>
+
+      <button submit id="sign-up-btn">가입</button>                  
+      
+   </div>
+   
+   *{ 
+      box-sizing: border-box;
+   }
+   
+   body{
+      background-color: rgb(161, 213, 255);
+   }
+   
+ .container{
+      display: flex;
+      width: 600px;
+      height: 700px;
+      margin: relative;
+      background-color: rgb(241, 241, 241);
+      align-items: center;
+      justify-content: space-evenly;
+      flex-direction: column;
+   }
+   
+   
+   #sign-up-btn{
+      width: 350px;
+      height: 50px;
+      border-radius: 5px;
+      background-color: rgb(217, 255, 159);
+   
+   }
+   
