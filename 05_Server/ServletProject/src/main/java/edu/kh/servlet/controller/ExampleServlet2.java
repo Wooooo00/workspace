@@ -3,6 +3,7 @@ package edu.kh.servlet.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -28,12 +29,23 @@ import jakarta.servlet.http.HttpServletResponse;
 @WebServlet("/example2")
 // 1번 과정
 public class ExampleServlet2 extends HttpServlet{
+	
+	@Override
+	public void init(ServletConfig config) throws ServletException {
+		System.out.println("ExampleServlet 객체 생성");
+	}
+	
+	@Override
+	public void destroy() {
+		System.out.println("ExampleServlet 객체 파괴");
+	}
 
 	
 // 2번 과정 doGet 오버라이딩 + 안에 자동 생성된 내용 지우기
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
+		System.out.println("코드 수정됨");
 //	String req.getParameter("name속성") : 
 //	제출된 input 값 중 name이 일치하는 input의 value 얻어오기
 //  같은 name이 여러 개인 경우 첫 번째만 얻어온다
