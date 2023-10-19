@@ -19,5 +19,13 @@ public class Member {
    private String profileImg;
    private String enrollDate;
    private String memberDelFl;
-   private int authority; 
+   private int authority;
+public Object getMemberNo() {
+	// TODO Auto-generated method stub
+	return null;
+}
+public void setMemberNo(Object memberNo2) {
+	// TODO Auto-generated method stub
+	
+} 
 }
