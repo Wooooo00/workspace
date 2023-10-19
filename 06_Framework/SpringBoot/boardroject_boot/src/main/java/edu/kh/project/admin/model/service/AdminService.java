@@ -30,7 +30,7 @@ public interface AdminService {
 	int initPw(int memberNo);
 
 
-	int changePw(int memberNo);
+	
 	
 	
 

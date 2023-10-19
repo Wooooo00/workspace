@@ -154,23 +154,6 @@ public class AdminController {
 		
 	}
 	
-	@PostMapping("changePw")
-	public String changePw(int memberNo, String memberEmail,
-			RedirectAttributes ra) {
-		
-		int result = service.changePw(memberNo);
-		if(result> 0) {
-			ra.addFlashAttribute("message", "비밀번호가 초기화 되었습니다");
-			
-		} else { 
-			ra.addFlashAttribute("message", "비밀번호 초기화 실패하였습니다");
-		}
-		return "redirect:selectMember?inputEmail=" + memberEmail;
-	}
-	
-	// 버튼 - > -> 변경할 비밀번호
-											//	다르면 -> 실패
-	
 	
 	
 }
