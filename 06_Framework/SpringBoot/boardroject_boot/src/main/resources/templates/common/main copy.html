@@ -10,11 +10,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title th:text="#{app.name}">app.name 출력 </title>
+  <title th:text="#{app.name}"></title>
 
-  <title>게시판 프로젝트</title>
+  <title>프로젝트</title>
 
-  <!-- common/common.html의 모든 내용을 읽어와 th:block 태그와 바꿈 -->
+
   <th:block th:replace="~{common/common}"></th:block>
 </head>
 
@@ -22,12 +22,7 @@
 
   <main>
 
-    <!-- common/header.html의 모든 내용을 읽어와 th:block 태그와 바꿈 -->
-    <!-- th:replace로 html 경로 지정 시 
-      접두사 : classpath:/templates/ 
-      접미사 : .html
-      생략해서 작성 
-      templates 폴더 -->
+   
 
     <th:block th:replace="~{common/header}"></th:block>
 

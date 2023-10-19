@@ -41,5 +41,10 @@ public class MainController {
 			// classpath == src/main/resources 
 			return "common/main";
 	}
+	
+			
+	
+	
+			
 
 }

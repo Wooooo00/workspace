@@ -79,11 +79,6 @@
         <li><a href="#">자유 게시판</a></li>
         <li><a href="#">질문 게시판</a></li>
         <li><a href="#">FAQ</a></li>
-
-        <!-- 로그인한 회원의 authority가 2인 경우에만 보여지도록 한다. -->
-        <li th:if="${ session.loginMember != null && session.loginMember.authority == 2}">
-            <a href="/admin/main">관리자 페이지</a></li> 
-        <li><a href="/member/login/member01@naver.com">빠른 로그인</a></li>
-        <li><a href="/member/login/wooo11@gmail.com">빠른 로그인2</a></li>
+        <li><a href="#">1:1문의</a></li> 
     </ul>
 </nav>

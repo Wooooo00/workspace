@@ -10,6 +10,12 @@ public interface MemberService {
 	// @return loginMember
 	Member login(Member inputMember);
 
+	int signup(Member inputMember, String[] memberAddress);
+
+	
+
+	Member quickLogin(String memberEmail);
+
 
 
 }

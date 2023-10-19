@@ -24,7 +24,14 @@ import edu.kh.project.member.model.dto.Member;
  *    이렇게 해야 연결 가능	 
  */
 
+// 로그인 
 @Mapper
 public interface MemberMapper {
+
+	// 회원 가입
 	Member login(Member inputMember);
+	
+	int signup(Member inputMember);
+
+	Member login(String memberEmail);
 }

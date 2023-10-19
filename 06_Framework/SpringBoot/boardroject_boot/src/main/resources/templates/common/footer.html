@@ -12,3 +12,24 @@
     </article>
 </footer>
 
+<!-- 화면에 메세지를 출력하는 경우 -->
+<!-- <th th:text="${message}"></th> -->
+
+<script th:inline="javascript">
+
+    // console.log([[${TEST}]]);
+
+    // const testMember = /* [[${TEST}]] */"테스트 멤버입니다";
+
+    // console.log(testMember);
+
+    // console.log(testMember.memberNo);
+
+    // redirectAttributes를 통해 전달된 message 출력하기
+
+    const message = /*[[${message}]]*/ "전달 받은 message";
+                    // message가 없다면 null
+
+    if(message != null) alert(message);
+</script>
+

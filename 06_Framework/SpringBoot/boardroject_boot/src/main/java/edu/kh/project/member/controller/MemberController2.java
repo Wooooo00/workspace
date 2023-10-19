@@ -25,7 +25,7 @@ import oracle.jdbc.proxy.annotation.Post;
 @Controller // Controller 역할 -> 요청, 응답을 제어 + bean으로 등록
 @RequestMapping("member") // 
 @SessionAttributes({"loginMember"}) // 세션에 올리기 
-public class MemberController {
+public class MemberController2 {
 	// MemberService 의존성 주입
 	@Autowired 
 	private MemberService service;

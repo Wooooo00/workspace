@@ -1,0 +1,64 @@
+*{
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+}
+
+
+div, main, header, footer, section, article, nav, aside, form
+{border : 1px solid black;}  
+
+header{
+   height: 72px;
+}
+
+/* ------------------------------------- */
+
+
+nav {
+
+
+   height: 40px;
+   position: sticky; /* 화면을 벗어나도 특정 위치에 고정 */
+   top: 0; /* 최상단에 위치 */
+
+   background-color: white;
+   z-index: 1000;
+   border-bottom: solid black 1px;
+
+   
+}
+
+nav > ul{
+   
+   display: flex;
+   list-style: none;
+   height: 100%;
+   
+}
+
+nav a{
+   text-decoration: none; /* 밑줄 제거 */
+   color: black;
+   font-size: 10px;
+   font-weight: bold;
+   padding: 10px 0; /* 상하 좌우*/
+   display:  block; 
+   text-align: center;
+   align-self: center;
+   height: 100%;
+   border-radius: 5px;
+
+   /* 요소 스타일 변경 시간 */
+   transition-duration: 0.2s;
+}
+   
+   
+   
+   
+
+
+
+.content{
+   height: 500px;
+}

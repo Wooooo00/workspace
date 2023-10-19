@@ -23,29 +23,57 @@ public class MemberServiceImpl implements MemberService{
 	private MemberMapper mapper;
 	
 	@Override
-		public Member login(Member inputMember) {
+	public Member login(Member inputMember) {
+	
+		// 1. 이메일이 일치하는 탈퇴하지 않은 회원 정보 조회(pw 포함)
+		Member loginMember = mapper.login(inputMember);
 		
-			// 1. 이메일이 일치하는 탈퇴하지 않은 회원 정보 조회(pw 포함)
-			Member loginMember = mapper.login(inputMember);
-			
-			
-			// 2. 조회 결과 없을 경우 return null;
-			log.debug("DB 조회 결과 : " + loginMember);
-			
-			
-			
-			if(loginMember == null) return null; 
 		
-			// 3. 입력 받은 비밀번호(평문) 
-			//    조회한 비밀번호(암호화) 같지 않으면 return null;
-			// TODO Auto-generated method stub
-			if(!bcrypt.matches(inputMember.getMemberPw(), loginMember.getMemberPw())) {
-				return null;
-				
-			}
+		// 2. 조회 결과 없을 경우 return null;
+		log.debug("DB 조회 결과 : " + loginMember);
+		
+		
+		
+		if(loginMember == null) return null; 
+	
+		// 3. 입력 받은 비밀번호(평문) 
+		//    조회한 비밀번호(암호화) 같지 않으면 return null;
+		// TODO Auto-generated method stub
+		if(!bcrypt.matches(inputMember.getMemberPw(), loginMember.getMemberPw())) {
+			return null;
 			
-			// 4 비밀번호가 일치하면 비밀번호 제거 후 return
-			loginMember.setMemberPw(null);
-			return loginMember;
 		}
+		
+		// 4 비밀번호가 일치하면 비밀번호 제거 후 return
+		loginMember.setMemberPw(null);
+		return loginMember;
+	}
+
+	@Override
+	public int signup(Member inputMember, String[] memberAddress) {
+		// TODO Auto-generated method stub
+		if(inputMember.getMemberAddress().equals(",,")) {
+			inputMember.setMemberAddress(null);
+			
+		} else {
+			String address = String.join("^^^", memberAddress);
+			inputMember.setMemberAddress(address);
+			
+		}
+		
+		// 비밀번호 암호화
+		
+		String encPw = bcrypt.encode(inputMember.getMemberPw());
+		inputMember.setMemberPw(encPw);
+		
+		// Mapper 메서드 호출
+		return mapper.signup(inputMember);
+	}
+	
+	@Override
+	public Member quickLogin(String memberEmail) {
+		return mapper.login(memberEmail);
+	}
+	
+	
 }
