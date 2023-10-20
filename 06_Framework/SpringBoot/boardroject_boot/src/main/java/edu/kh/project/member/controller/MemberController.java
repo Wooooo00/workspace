@@ -53,7 +53,7 @@ public class MemberController {
 		}
 		
 		model.addAttribute("loginMember", loginMember);
-		
+	
 		// 메인 페이지 리다이렉트
 		return "redirect:/";
 	}
