@@ -31,6 +31,7 @@ public interface AdminMapper {
 	int initPw(Map<String, Object> map);
 	
 	
+	
 
 	
 
