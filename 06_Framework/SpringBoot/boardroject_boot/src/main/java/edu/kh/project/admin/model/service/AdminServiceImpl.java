@@ -23,6 +23,8 @@ public class AdminServiceImpl implements AdminService {
 	
 	
 	
+	
+	
 	@Override
 	public Member selectMember(String inputEmail) {
 		return mapper.selectMember(inputEmail);

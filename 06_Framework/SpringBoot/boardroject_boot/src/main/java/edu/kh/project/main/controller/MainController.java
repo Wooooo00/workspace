@@ -18,6 +18,8 @@ public class MainController {
 			model.addAttribute("testName", "홍길동");
 			model.addAttribute("testAge", "25");
 			
+			
+			
 			Member testMember = new Member();
 			testMember.setMemberNo(88888);
 			testMember.setMemberEmail("testMember@naver.com");

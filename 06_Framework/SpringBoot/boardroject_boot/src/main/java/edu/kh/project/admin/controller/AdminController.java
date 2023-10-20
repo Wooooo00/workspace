@@ -21,8 +21,12 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping("admin")
 public class AdminController {
 	
+	// @Controller, // 인터페이스 상속, 리퀘스트 매핑 
+	
+	
 	@Autowired
 	private AdminService service;
+	
 	
 	/** 관리자 메인 페이지
 	 * @return "admin/admin-main"
@@ -37,6 +41,7 @@ public class AdminController {
 	}
 	
 	
+
 	@GetMapping("selectMember")
 	public String selectMember(String inputEmail, Model model) {
 		
@@ -55,6 +60,7 @@ public class AdminController {
 		// return "admin/fail"; // forward
 		return "admin/fail";
 	}
+	
 	
 	// 회원 전체 조회
 	
