@@ -1,6 +1,6 @@
 package edu.kh.project.member.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Autowired; 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,6 +14,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.kh.project.member.model.dto.Member;
 import edu.kh.project.member.model.service.MemberService;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 
 /* Spring Boot Controller에서 요청 주소 작성 시 
@@ -35,11 +37,13 @@ public class MemberController {
 	 * @param inputMember : 아이디, 비밀번호 파라미터
 	 * @param model : 데이터 전달 객체
 	 * @param ra : 리다이렉트 시 request scope로 데이터 전달
+	 * @param saveId : 아이디 저장 체크 시 on 체크하지 않을 시 null
+	 * @param resp : 응답 방법을 제공하는 객체
 	 * @return 메인 페이지(/) 리다이렉트
 	 */
 	@PostMapping("login") // /member/login (POST)
 	public String login(Member inputMember, 
-			Model model, RedirectAttributes ra) {
+			Model model, RedirectAttributes ra, String saveId, HttpServletResponse resp) {
 		
 		// 로그인 서비스 호출
 		Member loginMember = service.login(inputMember);
@@ -47,6 +51,40 @@ public class MemberController {
 		// 로그인 성공 시
 		if(loginMember != null) {
 			// 쿠키 생성 코드 작성 예정
+			
+			// 쿠키 객체 생성
+			// jakarta.servlet.http.Cookie
+			// 쿠키도 Map 형식(Key, Value)으로 데이터를 저장한다 
+			
+			Cookie cookie = new Cookie("saveId", loginMember.getMemberEmail());
+			
+			// 아이디 저장이 체크된 경우
+			if(saveId != null) {
+				
+				// 쿠키의 수명(유지기간) 지정 (초 단위)
+				cookie.setMaxAge(60 * 60 * 24 * 30);
+			}
+			
+			// 체크되지 않은 경우
+			else {
+			
+				// 만들자마자 없어지게 한다 = 삭제
+				cookie.setMaxAge(0);
+			}
+			
+			// 쿠키가 어떤 요청에 첨부돼서 전달될지 주소(경로) 지정
+			
+			cookie.setPath("/"); // 최상위 주소 이하 모든 요청에 쿠키를 첨부
+			
+			// 응답 객체(HttpServletResponse)를 이용 (파라미터에 작성)
+			
+			// 서버 응답 시 클라이언트에게 생성한 쿠키 전달
+			
+			// 전달 받은 클라이언트(브라우저)가 
+			// Cookie 객체를 브라우저 자체 쿠키 파일에 저장
+			
+			resp.addCookie(cookie);
+			
 		}
 		
 		// 로그인 실패 시
@@ -123,6 +161,7 @@ public class MemberController {
 	 * @param ra : 리다이렉트 시 request scope로 데이터 전달
 	 * @return 
 	 */
+	
 	@GetMapping("login/{memberEmail}")
 	public String quickLogin(
 		@PathVariable("memberEmail") String memberEmail,

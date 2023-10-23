@@ -144,8 +144,26 @@
               </section>
             </fieldset>
   
+
+            <!-- 체크된 경우 : 로그인 성공 시 cookie를 이용해 아이디 저장
+                    체크 해제된 경우 : 로그인 성공 시 cookie 삭제 
+
+            쿠키란 
+            클라이언트(브라우저) 측에서 관리하는 파일 
+          
+            쿠키 파일에 등록 되어 주소가 요청 될 떄마다 자동으로 요청에 첨부 되어 서버로 전달 된다 
+
+            값 추가, 수정, 삭제 등을 진행한 후 다시 클라이언트에게 반환
+
+            - 서버(Java), 클라이언트(JS)로 다룰 수 있음 
+          
+              
+          
+            -->
+
             <label>
               <input type="checkbox" name="saveId"> 아이디 저장
+              <!-- 체크박스, 라디오의 경우 밸류가 설정 되어 있다면 밸류값이 전달 되지만 밸류값이 없는 경우에 선택을 한다면 on, 그렇지 않으면 null값이 들어감  -->
             </label>
   
             <article class="signup-find-area">
@@ -179,6 +197,7 @@
 
           </a>
 
+          
           <div class="my-info" th:object="${session.loginMember}">
             
             <div>
@@ -205,6 +224,8 @@
 
   <!-- main.js 추가 -->
   <script src="/js/main.js"></script>
+
+
 </body>
 
 </html>
