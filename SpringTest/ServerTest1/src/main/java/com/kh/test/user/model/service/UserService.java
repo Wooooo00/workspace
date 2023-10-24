@@ -4,7 +4,8 @@ import com.kh.test.user.model.dto.User;
 
 public interface UserService {
 
-	User withUser(String userId);
+
+	User withUserId(String inputId);
 
 	
 	

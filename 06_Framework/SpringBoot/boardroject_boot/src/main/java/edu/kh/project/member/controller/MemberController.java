@@ -174,6 +174,9 @@ public class MemberController {
 			ra.addFlashAttribute("message", "빠른 로그인 실패");
 		}
 		
+		
+		
+		
 		// 기본값 -> request scope
 		// @SessionAttributes({"loginMember"}) -> session scope 이동
 		model.addAttribute("loginMember", loginMember);

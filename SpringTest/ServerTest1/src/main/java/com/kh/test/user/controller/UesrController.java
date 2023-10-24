@@ -1,5 +1,6 @@
 package com.kh.test.user.controller;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,29 +11,33 @@ import com.kh.test.user.model.dto.User;
 import com.kh.test.user.model.service.UserService;
 
 @Controller
-public class UesrController {
+public class UesrController{
 	
 	@Autowired
 	private UserService service;
 	
 	@GetMapping("withUserId")
-	public String withUserId(String userId, Model model) {
+	public String withUserId(String inputId, Model model) {
 		
-		User withUser = service.withUser(userId);
+		User user = service.withUserId(inputId);
 		
-		if(withUser != null) {
-			model.addAttribute("withUser", withUser);
+		if(user == null) {
 			
-			return "/withUserId";
+			return "searchFail";
+			
+		} else {
+			
+			model.addAttribute("user", user);
+			
+			return "searchSuccess";
+			
+		}
+			
+	}
 		
-		
-		
-	
-	
-
-	
-
 }
+	
+
 
 
 

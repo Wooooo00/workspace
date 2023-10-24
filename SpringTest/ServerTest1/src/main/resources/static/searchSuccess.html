@@ -8,9 +8,17 @@
 <body>
    <table border="1">
       <tr>
-         <td>회원번호</td>
-         <td>회원아이디</td>
-         <td>회원나이</td>
+         <th>회원번호</th>
+         <th>회원아이디</th>
+         <th>회원나이</th>
+      </tr>
+
+      <tr th: object="${user}">
+         <th th:text="*{userNo}"></th>
+         <th th:text="*{userId}"></th>
+         <th th:text="*{userName}"></th>
+         <th th:text="*{userAge}"></th>
+
       </tr>
 
    </table>
