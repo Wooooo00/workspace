@@ -64,28 +64,39 @@ function sample6_execDaumPostcode() {
    }
 
    // 4) 이메일 정규식 검사
+   const regEx = /^[A-Za-z\d\-\_]{4,}@[가-힣\w\-\_]+(\.\w+){1,3}$/;
+    
+   // 입력 받은 이메일이 정규식과 일치하는 경우
+   if( regEx.test(memberEmail.value)) {
 
-      const regEx = /^[A-Za-z\d\-\_]{4,}@[가-힣\w\-\_]+(\.\w+){1,3}$/;
-      
-      // 입력 받은 이메일이 정규식과 일치하는 경우
-      if( regEx.test(memberEmail.value)) {
-         emailMessage.innerText = "유효한 이메일 형식입니다.";
-         emailMessage.classList.add("confirm");
-         emailMessage.classList.remove("error");
-         checkObj.memberEmail = true; // 유효한 상태를 기록
+      // ------------ 이메일 중복 검사(비동기) ---------------
 
-      }
+      fetch("/member/checkEmail?email=" +memberEmail.value)
+      .then( response => response.text() )
+      .then( result => {
+         if(result == 0) {
+            emailMessage.innerText = "사용 가능한 이메일입니다.";
+            emailMessage.classList.add("confirm");
+            emailMessage.classList.remove("error");
+            checkObj.memberEmail = true; // 유효한 상태를 기록
+         } else{
+            emailMessage.innerText = "이미 사용 중인 이메일입니다.";
+            emailMessage.classList.add("error");
+            emailMessage.classList.remove("confirm");
+         }
+      })
+      .catch( e => console.log(e))
+   }
+   // ------------------------------------------------------------
+   // 입력 받은 
 
-      // 입력 받은 
-      else{
-         emailMessage.innerText = "유효하지 않은 이메일 형식입니다.";
-         emailMessage.classList.add("error");
-         emailMessage.classList.remove("confirm");
-         checkObj.memberEmail = false; // 유효하지 않은 상태임을 기록
-
-      }
-
- });
+   else{
+      emailMessage.innerText = "유효하지 않은 이메일 형식입니다.";
+      emailMessage.classList.add("error");
+      emailMessage.classList.remove("confirm");
+      checkObj.memberEmail = false; // 유효하지 않은 상태임을 기록
+   }
+});
 
  //------------------------------------------------------------------------------
 
@@ -240,22 +251,44 @@ memberNickname.addEventListener("input", () => {
       return;
    }
 
-const regEx = /^[가-힣\w\d]{2,10}$/;
-
+   const regEx = /^[가-힣\w\d]{2,10}$/;
+   
+     
+   
    if(regEx.test(memberNickname.value)) {
-      nickMessage.innerText = "유효한 닉네임입니다.";
-      nickMessage.classList.add("confirm");
-      nickMessage.classList.remove("error");
-      checkObj.memberNickname = true; 
-   } else {
+
+
+      // 닉네임 중복 검사
+      fetch("/member/checkNickname?nickname=" +memberNickname.value)
+      .then( response => response.text() )
+      .then(result => {
+         if(result == 0) {
+            nickMessage.innerText = "사용 가능한 닉네임입니다.";
+            nickMessage.classList.add("confirm");
+            nickMessage.classList.remove("error");
+            checkObj.memberNickname = true; 
+
+         }  else {
+            nickMessage.innerText = "이미 사용중";
+            nickMessage.classList.add("error");
+            nickMessage.classList.remove("confirm");
+            checkObj.memberNickname = false;
+         }
+      })
+      .catch(e => console.log(e));
+   }
+
+
+   // ----------------------------------------------------------------------
+   else {
       nickMessage.innerText = "유효하지 않은 닉네임입니다.";
       nickMessage.classList.add("error");
       nickMessage.classList.remove("confirm");
       checkObj.memberNickname = false;
    }
 
-});
 
+});
 
 // 전화번호 유효성 검사
 
@@ -327,8 +360,8 @@ const regEx = /^[가-힣\w\d]{2,10}$/;
             return;
          
       }
-
-
+                  
+                     
 
 
       }

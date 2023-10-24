@@ -118,7 +118,15 @@ COMMIT;
 
 SELECT * FROM "MEMBER";
 
+-- 이메일 중복 검사(중복 되는 값이 있으면 0->1 없으면 -> 0)
+SELECT COUNT(*) 
+FROM "MEMBER"
+WHERE MEMBER_DEL_FL = 'N'
+AND MEMBER_EMAIL = 'member01@naver.com';
 
+SELECT MEMBER_EMAIL
+FROM "MEMBER"
+WHERE MEMBER_EMAIL LIKE '%com%';
 
 
 

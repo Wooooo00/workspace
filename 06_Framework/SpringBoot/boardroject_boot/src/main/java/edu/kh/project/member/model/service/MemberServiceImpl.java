@@ -75,5 +75,17 @@ public class MemberServiceImpl implements MemberService{
 		return mapper.login(memberEmail);
 	}
 	
+	@Override
+	public int checkEmail(String email) {
+		// TODO Auto-generated method stub
+		return mapper.checkEmail(email);
+	}
+	
+	@Override
+	public int checkNickname(String nickName) {
+		// TODO Auto-generated method stub
+		return mapper.checkNickname(nickName);
+	}
+	
 	
 }
