@@ -26,19 +26,19 @@ public class CustomerController {
 	// insertCustomer 메서드가 Post이므로 포스트 맵핑 
 	@PostMapping("insertCustomer")
 
-	// 파라미터로 DTO인 customer와 DAO 모델 
-	public String insertCustomer(Customer customer, Model model) {
-
-		// insertCustomer에 들어간 customer 값을 서비스 호출
-	int result = service.insertCustomer(customer);
-
-	// 결과가 0보다 크다면 DAO에서 데이터 변경 추가
-	if(result > 0) model.addAttribute("message", "추가 성공!!!");
-
-	else model.addAttribute("message", "추가 실패...");
-
-	// result 화면으로 보낸다.
-	return "result";
+		// 파라미터로 DTO인 customer와  
+		public String insertCustomer(Customer customer, Model model) {
+	
+			// insertCustomer에 들어간 customer 값을 서비스 호출
+		int result = service.insertCustomer(customer);
+	
+		// 결과가 0보다 크다면 
+		if(result > 0) model.addAttribute("message", "추가 성공!!!");
+	
+		else model.addAttribute("message", "추가 실패...");
+	
+		// result 요청 위임
+		return "result";
 
 	}
 

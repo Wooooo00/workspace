@@ -1,16 +1,22 @@
 package edu.kh.project.admin.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import edu.kh.project.admin.model.service.AjaxService;
 import edu.kh.project.member.model.dto.Member;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j // 
 @Controller
 @RequestMapping("ajax")
 public class AjaxController {
@@ -102,4 +108,48 @@ public class AjaxController {
 	}
 	
 	
+	
+	@GetMapping(value="selectAll", produces="application/json")
+	@ResponseBody // 비동기 통신 응답(데이터 자체)
+	public List<Member> selectAll() {
+		
+		// List(Java 객체)를 HttpMessageConverter가 Json으로 변환
+		// 	produces 속성을 이용해
+		// 		응답받는 JS에서 자동으로 JS 객체로 변환하도록 한다
+		// JS 객체
+		
+		return service.selectAll();
+		
+	}
+
+	// @RequestBody BODY에 있는 데이터 요청 
+	// 요청 body에 담긴 내용을 얻어와 오른쪽 매개변수에 대입
+	// HTTPMessageConverter가 이 과정에서 데이터 타입을 JAVA에 맞게 알맞게 변환
+	// number -> int/double
+	// string -> String
+	// JSON -> DTO, List, Map 
+	
+	@PostMapping("insertMember")
+	@ResponseBody // 반환값이 그대로 돌아가도록 한다.
+	public int inserMember(@RequestBody Member member) {
+		
+		// @slf4j
+		log.debug(member.toString());
+		
+		return service.insertMember(member);
+	}
+	
+	/**
+	 * @param paramMap : flag, targetNo가 담겨있는 map
+	 * @return 
+	 */
+	@PutMapping("updateFlag")
+	@ResponseBody
+	public int updateFlag(@RequestBody Map<String, Object> paramMap) {
+		
+		return service.updateFlag(paramMap);
+		
+	}
+	
 }
+

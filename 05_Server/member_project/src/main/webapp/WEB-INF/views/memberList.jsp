@@ -6,9 +6,14 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>회원 목록</title>
+   <title>스텝 과제</title>
 </head>
-<body>
+<body>   
+
+   검정 펜 <input type="number">
+   빨간 펜 <input type="number"> 
+   파란 펜 <input type="number"> 
+   화이트  <input type="number"> 
 
    <table border="1">
       <thead>
@@ -23,16 +28,7 @@
       </thead>
 
       <tbody>
-         <c:forEach items="${memberList}" var="mem">
-            <tr>
-               <td>${mem.memberNo}</td>
-               <td>${mem.memberId}</td>
-               <td>${mem.memberPw}</td>
-               <td>${mem.memberName}</td>
-               <td>${mem.gender}</td>
-               <td>${mem.enrollDate}</td>
-            </tr>
-         </c:forEach>
+       
       </tbody>
 
    </table>
