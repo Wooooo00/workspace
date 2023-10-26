@@ -75,10 +75,10 @@
 
 <nav>
     <ul>
-        <li><a href="#">공지사항</a></li>
-        <li><a href="#">자유 게시판</a></li>
-        <li><a href="#">질문 게시판</a></li>
-        <li><a href="#">FAQ</a></li>
+        <li><a href="/board/1">공지사항</a></li>
+        <li><a href="/board/2">자유 게시판</a></li>
+        <li><a href="/board/3">질문 게시판</a></li>
+        
 
         <!-- 로그인한 회원의 authority가 2인 경우에만 보여지도록 한다. -->
         <li th:if="${ session.loginMember != null && session.loginMember.authority == 2}">
