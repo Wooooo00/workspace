@@ -13,13 +13,7 @@ import lombok.Setter;
 		private int userNo;
 		private String userId;
 		private String userName;
-		private String userAge;
-		
-		
-		
-	
-		
-		
+		private int userAge;
 		
 	}
 		 

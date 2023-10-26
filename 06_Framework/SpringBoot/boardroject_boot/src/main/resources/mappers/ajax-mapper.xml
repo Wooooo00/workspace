@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- 연결할 인터페이스의 패키지명.인터페이스명을 작성 -->
+
+<mapper namespace="edu.kh.project.admin.model.mapper.AjaxMapper">
+
+  
+  
+	<select id="selectMemberNo" resultType="String">
+      SELECT MEMBER_EMAIL
+      FROM 	"MEMBER"
+      WHERE MEMBER_NO = #{inputMemberNO}
+   </select>
+   
+   
+   <select id="selectEmail" resultType="String">
+	  SELECT MEMBER_TEL
+      FROM 	"MEMBER"
+      WHERE MEMBER_EMAIL = #{inputEmail}
+   </select>
+	
+	
+	<select id="selectMember" resultType="Member">
+      SELECT MEMBER_NO, MEMBER_EMAIL, MEMBER_NICKNAME , MEMBER_DEL_FL,
+        MEMBER_TEL , MEMBER_ADDRESS , PROFILE_IMG , AUTHORITY ,
+         TO_CHAR(ENROLL_DATE, 'YYYY"년" MM"월" DD"일" HH24"시" MI"분" SS"초"') AS ENROLL_DATE 
+      FROM "MEMBER"
+      WHERE MEMBER_NO = #{no}
+   	</select>
+	
+	<!-- Mapper 반환형이 List인 경우
+		조회 결과 1행씩 List에 자동으로 추가되므로 resultType을 List가 아닌 List에 추가되는 요소의 타입을 작성
+		-->
+		
+	<!-- ${keyword} 사용 이유 $ 사용 이유
+		# 사용시 ''가 붙기 때문에
+	 -->
+	<select id="selectEmailList" resultType="string">
+		SELECT MEMBER_EMAIL
+		FROM "MEMBER"
+		WHERE MEMBER_EMAIL LIKE '%${keyword}%'
+		
+	</select>
+	
+	<select id="selectAll" resultType="Member">
+		select MEMBER_NO, MEMBER_EMAIL, MEMBER_NICKNAME,
+			MEMBER_TEL, MEMBER_DEL_FL
+		FROM "MEMBER"
+		ORDER BY MEMBER_NO DESC
+	</select>
+	
+	<!-- 탈퇴 여부 수정 --> 
+	<update id="updateFlag">
+		UPDATE "MEMBER" SET
+		MEMBER_DEL_FL = #{flag} 
+		WHERE MEMBER_NO = #{targetNo}
+	</update>
+	
+
+</mapper>
