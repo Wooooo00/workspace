@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="package edu.kh.project.user.model.mapper;">
+<!-- UserMapper와 경로를 똑같이 작성해준다.-->
+
+<select id="selectUser" resultType="User">
+
+SELECT * FROM TB_USER
+
+WHERE USER_ID = #{inputId}
+
+</select>
+
+</mapper>
+	
