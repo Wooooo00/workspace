@@ -13,6 +13,8 @@
 </head>
 <body>
 
+
+    <!-- th:with -> 지역 변수(필드 안쪽이 범위인 변수 선언 )-->
     <!-- th:with="key=value" -> 변수 선언 -->
     <main th:with="boardList=${map.boardList}, pagination=${map.pagination}">
         
@@ -62,7 +64,7 @@
                                 <td th:text="*{boardNo}">게시글 번호</td>
                                 <td> 
                                    <!-- 썸네일 추가 예정 -->
-                                    
+
                                    <!-- /board/1 목록 조회-->
                                    <!-- /board/1/1499 목록 조회-->
                                    <a th:href="@{/board/{boardCode}/{boardNo}(boardCode=${boardCode}, boardNo=*{boardNo}, cp=${pagination.currentPage})}" 
