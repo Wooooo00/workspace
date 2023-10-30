@@ -1,0 +1,23 @@
+package com.kh.test.customer.model.dto;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@ToString
+public class Customer2 {
+	
+	private int customerNo;
+
+	private String customerName;
+
+	private String customerTel;
+
+	private String customerAddress;
+	
+}
+

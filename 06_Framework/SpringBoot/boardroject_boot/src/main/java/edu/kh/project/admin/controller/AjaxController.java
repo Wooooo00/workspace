@@ -72,6 +72,9 @@ public class AjaxController {
 		return service.selectEmail(inputEmail);
 	}
 	
+	
+	
+	
 	@GetMapping(value="selectMember", produces = "application/json; charset=UTF-8")
 	@ResponseBody
 	public Member selectMember(int no) {

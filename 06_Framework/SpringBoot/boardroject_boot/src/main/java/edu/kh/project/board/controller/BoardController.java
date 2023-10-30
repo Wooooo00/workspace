@@ -52,6 +52,7 @@ public class BoardController {
 	public String selectBoardList(@PathVariable("boardCode") int boardCode, Model model,
 			@RequestParam(value="cp", required=false, defaultValue = "1" ) int cp ) {
 		
+		
 		Map<String, Object> map = service.selectBoardList(boardCode, cp);
 		
 		model.addAttribute("map", map);
@@ -68,6 +69,9 @@ public class BoardController {
 	 * 
 	 * 
 	 */
+	
+	
+	
 	
 			
 	@GetMapping("{boardCode:[0-9]+}/{boardNo:[0-9]+}")

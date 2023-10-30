@@ -1,6 +1,6 @@
 package com.kh.test.user.model.service;
 
-import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Mapper; 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

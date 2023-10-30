@@ -1,0 +1,7 @@
+package edu.kh.project.board.model.mapper;
+
+
+public interface BoardMapper2 {
+
+	
+}

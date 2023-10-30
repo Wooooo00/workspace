@@ -11,6 +11,11 @@ selectMemberNo.addEventListener("click", () => {
    // querystring(쿼리스트링) : 주소에 담겨진 파라미터를 지칭하는 문자열
    // ?로 시작 ?key=value&?key=value(띄어쓰기가 없어야 됨) 
    // 
+
+   fetch()
+   .then
+   .then
+   
    
    // 요청에 대한 응답이 돌아 왔을 때 수행
    fetch("/ajax/selectMemberNo?memberNo=" + inputMemberNo.value)
