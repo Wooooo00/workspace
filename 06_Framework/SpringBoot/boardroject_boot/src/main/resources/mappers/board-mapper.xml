@@ -129,5 +129,42 @@
 	</select>	
 	
 	
+	<!-- 게시글 좋아요 여부 확인 -->
+	<select id="likeCheck" resultType="_int">
+		
+		SELECT COUNT(*) FROM "BOARD_LIKE"
+		WHERE BOARD_NO = #{boardNo}
+		AND MEMBER_NO = #{memberNo}
+			
+	</select>
+	
+	<delete id="deleteBoardLike">
+		
+		DELETE FROM "BOARD_LIKE"
+		WHERE MEMBER_NO = #{memberNo}
+		AND BOARD_NO = #{boardNo}
+		
+	</delete>
+	
+	
+
+	<insert id="insertBoardLike">
+		INSERT INTO "BOARD_LIKE"
+		VALUES( #{memberNo} , #{boardNo} )
+	</insert>
+
+	<select id="countBoardLike" resultType="_int">
+		SELECT COUNT(*) FROM "BOARD_LIKE"
+		WHERE BOARD_NO = #{boardNo}
+		
+	</select>
+	
+	<update id="updateReadCount">
+		UPDATE "BOARD" SET
+		READ_COUNT = READ_COUNT + 1
+		WHERE BOARD_NO = #{boardNo}
+		
+	</update>
+
   
 </mapper>

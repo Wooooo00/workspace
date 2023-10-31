@@ -590,4 +590,24 @@ ORDER SIBLINGS BY COMMENT_NO
       VALUES(SEQ_COMMENT_NO.NEXTVAL, '자식 댓글 1', DEFAULT, DEFAULT,
             1, 1480, 762);
 
+           
+           
+ 
+ SELECT * FROM BOARD_LIKE;   
+           
+SELECT FROM "BOARD_LIKE"
+WHERE BOARD_NO = 1500
+AND MEMBER_NO =1;
+
+
+DELETE FROM "BOARD_LIKE"
+WHERE MEMBER_NO = 10
+AND BOARD_NO = 1500;
+
+ROLLBACK;
+
+
+            
+       
+
 

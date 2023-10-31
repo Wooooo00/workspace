@@ -75,6 +75,45 @@ public class BoardServiceImpl implements BoardService{
 	}
 	
 	
+	 @Override
+	public int likeCheck(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		return mapper.likeCheck(map);
+	}
+	 
+	@Override
+	public int like(Map<String, Object> paramMap) {
+		
+		int result = 0; // Mapper 호출 결과 저장 변수
+		
+		// 기존에 좋아요 상태 == check가 1 
+		// -> 좋아요 해제 == BOARD_LIKE 테이블에서 DELETE
+		
+		if( (Integer) (paramMap.get("check")) == 1 ) {
+			result = mapper.deleteBoardLike(paramMap);
+			
+		} else {
+			
+			result = mapper.insertBoardLike(paramMap);
+		}
+		
+		// 안 한 상태 == check가 0
+		// -> 좋아요 삽입 == BOARD_LIKE 테이블에 INSERT
+			
+		// SQL 수행 결과가 0 == 파라미터에 문제가 있다
+		if(result == 0) return -1;
+		
+		// SQL 성공시 
+		// 현재 게시글의 좋아요 수를 조회해서 반환
+		
+		return mapper.countBoardLike( (Integer)(paramMap.get("boardNo")) );
+	}
 	
+	// 조회 수 증가 
+	@Override
+	public int updateReadCount(int boardNo) {
+		// TODO Auto-generated method stub
+		return mapper.updateReadCount(boardNo);
+	}
 	
 }
