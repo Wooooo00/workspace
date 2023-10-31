@@ -1,5 +1,7 @@
 package com.kh.test.board.model.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,10 +15,12 @@ public class BoardServiceImpl implements BoardService {
 	private BoardMapper mapper;
 	
 	@Override
-	public Board inputTitle(Board board) {
+	public List<Board> boardList(String inputTitle) {
 		// TODO Auto-generated method stub
-		return mapper.inputTitle(board);
+		return mapper.boardList(inputTitle);
 	}
 	
+	
+
 
 }

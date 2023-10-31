@@ -1,7 +1,7 @@
 package com.kh.test.board.controller;
 
-import java.awt.List;
-import java.util.Map;
+
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,34 +19,30 @@ public class BoardController {
 	
 	@GetMapping("inputTitle")
 	
-	public String inputTitle(Board board, Model model) {
+	public String inputTitle(String inputTitle, Model model) {
 		
-		Map<Board, board> = new BoardList<board>;
 		
-//		Board board = service.inputTitle(board);
-		
-//		Board <String, object >= service.inputTitle(board);
 	
-//		List BoarList<board> = List<>; 
+		List<Board> boardList = service.boardList(inputTitle);
 		
-		if(board == null) {
+		if(boardList.isEmpty()) {
+			
 			
 			model.addAttribute("message", "조회 결과가 없습니다");
 			
-			// 여러행 조회 -> 컬렉션
-			
-			
 			return "searchFail";
-			
-			
-		} else {
-			
+		}
+			// 여러행 조회 -> 컬렉션
+		
+		else {
 			
 			return "searchSuccess";
-
+			
 		}
 		
-	}
+	}	
+			
 	
+}	
 	
-}
+

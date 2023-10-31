@@ -6,11 +6,10 @@
 	<select id="inputTitle" resultType="board">
 		
 		SELECT BOARD_NO, BOARD_TITLE, BOARD_CONTENT, BOARD_DATE,
-			BOARD_READCOUNT
+			BOARD_READCOUNT, BOARD_DATE
 		FROM TB_BOARD 
-		JOIN TB_USER
-		USING ON 'USER_NO' = 'USER_NO'
-		WHERE boardTitle LIKE '${%inputTitle%}';
+		JOIN TB_USER USING (USER_NO)
+		WHERE boardTitle LIKE %'${inputTitle}'%;
 
 
 		

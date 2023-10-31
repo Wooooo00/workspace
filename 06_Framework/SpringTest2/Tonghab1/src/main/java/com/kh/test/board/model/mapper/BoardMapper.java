@@ -1,10 +1,15 @@
 package com.kh.test.board.model.mapper;
 
+import java.util.List;
+
 import com.kh.test.board.model.dto.Board;
 
 public interface BoardMapper {
 
 
-	Board inputTitle(Board board);
 
+
+	List<Board> boardList(String inputTitle);
+
+	
 }
