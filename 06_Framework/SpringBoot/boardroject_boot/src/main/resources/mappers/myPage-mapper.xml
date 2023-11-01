@@ -18,23 +18,27 @@
 		SELECT MEMBER_PW FROM "MEMBER"
 		WHERE MEMBER_NO = #{memberNO}
 		
-	</select>
+	 </select>
   
-  <update id="changePw">
-  	UPDATE "MEMBER" SET 
-	MEMBER_PW = #{newPw}
-	WHERE MEMBER_NO = #{memberNo}
-  </update>
+	  <update id="changePw">
+	  	UPDATE "MEMBER" SET 
+		MEMBER_PW = #{newPw}
+		WHERE MEMBER_NO = #{memberNo}
+	  </update>
   
   
- <update id="secession">
-	UPDATE "MEMBER" SET 
-	MEMBER_DEL_FL = #{memberDelFl}
-	WHERE MEMBER_NO = #{memberNo};
- </update>
+	 <update id="secession">
+		UPDATE "MEMBER" SET 
+		MEMBER_DEL_FL = #{memberDelFl}
+		WHERE MEMBER_NO = #{memberNo};
+	 </update>
 
-
-
+	
+	<update id="profile">
+		UPDATE "MEMBER" SET
+		PROFILE_IMG = #{profileImg}
+		WHERE MEMBER_NO = #{memberNo}
+	</update>
   
       
   	    
