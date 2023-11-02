@@ -612,7 +612,31 @@ WHERE MEMBER_NO = '6';
 
 COMMIT;
 
+/* SEQ_IMG_NO 시퀀스 번호를 하나 생성해서 반환하는 함수 생성 */
 
+CREATE OR REPLACE FUNCTION NEXT_IMG_NO
+RETURN NUMBER 
+IS NUM NUMBER;
+BEGIN 
+   SELECT SEQ_IMG_NO.NEXTVAL 
+   INTO NUM
+   FROM DUAL;
+   
+   RETURN NUM;
+END;
+
+
+/* 한 번에 여러행 삽입하기 (INSERT + 서브쿼리) */
+
+INSERT INTO "BOARD_IMG"
+
+SELECT SEQ_IMG_NO.NEXTVAL, '경로', '변경된 이름', '원본이름', 0, 1496 FROM DUAL
+UNION
+SELECT SEQ_IMG_NO.NEXTVAL, '경로2', '변경된 이름2', '원본이름2', 2, 1496 FROM DUAL
+UNION
+SELECT SEQ_IMG_NO.NEXTVAL, '경로3', '변경된 이름3', '원본이름3', 3, 1496 FROM DUAL;
+
+ROLLBACK;
 
             
        

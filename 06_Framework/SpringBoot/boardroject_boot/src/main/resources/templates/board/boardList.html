@@ -56,7 +56,7 @@
 
                         <!-- 게시글이 존재할 때 -->
 
-                        <tr th:if="${#lists.size(boardList) != 0}">
+                        <th:block th:if="${#lists.size(boardList) != 0}">
 
                         <!-- <tr th:unless="${lists.size(boardList) == 0}"> 위의 타임리프와 같은 뜻 --> 
                         
@@ -89,20 +89,26 @@
     
                                 <!-- 좋아요 수 -->
                                 <td th:text="*{likeCount}">0</td>
-    
                             </tr>
-                
+
+                        </th:block>
 
                     </tbody>
                 </table>
             </div>
+            
+            
 
-
-
-            <div class="btn-area">
+            <div th:if="${session.loginMember != null}" class="btn-area">
                 <!-- 로그인 상태일 때만 글쓰기 버튼 노출 -->
+
+                <!-- /board/{boardCode}
+                    -> /editBoard/{boardCode}/insert
+                -->
                 <button id="insertBtn">글쓰기</button>                     
             </div>
+            
+            <!-- cot loginCheck = /*[ns[${session.loginMember != null ? true : false}]]*/ "로그인 여부"; -->
 
 
             <!-- ============================================================================================================== -->
@@ -174,6 +180,11 @@
     
 
     <th:block th:replace="~{common/footer}"></th:block>
+
+    <script th:inline="javascript">
+        const boardCode = /*[[${boardCode}]]*/ "글쓰기";
+
+    </script>
 
     <script src="/js/board/boardList.js"></script>
 
