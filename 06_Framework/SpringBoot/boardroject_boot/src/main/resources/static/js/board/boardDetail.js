@@ -4,8 +4,6 @@ const boardLike = document.querySelector("#boardLike");
 // 좋아요 버튼 클릭 시(이벤트 리스너 추가)
 boardLike.addEventListener("click", e => {
 
-});
-
   // 1. 로그인 여부 확인 (로그인한 회원만 좋아요를 누를 수 있다!)
 
   // *** 로그인 여부 확인 방법 ***
@@ -26,8 +24,6 @@ boardLike.addEventListener("click", e => {
   // 2. 기존 좋아요 상태 확인
   let check;
 
-  
-
   // "fa-regular" : 비어있는 하트
   // "fa-solid" : 채워져 있는 하트
   // 클릭한 하트에 class 속성 값으로 "fa-regular"가 있으면 true
@@ -36,7 +32,6 @@ boardLike.addEventListener("click", e => {
   } else{
     check = 1;
   }
-
 
   // 3. ajax 구문 작성
 
@@ -75,9 +70,6 @@ boardLike.addEventListener("click", e => {
 /* 목록으로 버튼 */
 
 const goToListBtn = document.getElementById("goToListBtn");
-
-goToListBtn.addEventListener("click", goToListFn);
-
 
 if(goToListBtn != null){ // 화면에 목록으로 버튼이 있을 때만 수행
   
@@ -126,38 +118,44 @@ if(goToListBtn != null){ // 화면에 목록으로 버튼이 있을 때만 수�
 
   // 이벤트 리스너 추가
   goToListBtn.addEventListener("click", goToListFn);
-
 }
 
 
+// --------------------------------------------------------------
+
+/* 게시글 삭제 */
 const deleteBtn = document.getElementById("deleteBtn");
+// 만약 화면에 버튼이 없으면 null 반환
 
-if(deleteBtn != null) {
-   deleteBtn.addEventListener("click", () => {
+if(deleteBtn != null){ // 삭제 버튼이 존재하는 경우
+  
+  deleteBtn.addEventListener("click", () => {
 
-      if(confirm("삭제하시겠습니까?")) {
+    // confirm : 확인 클릭 -> true / 취소 클릭 -> false 반환
+    if( confirm("삭제 하시겠습니까?") ){
 
-         location.href
-            = location.pathname.replace("board", "editBoard") + "/delete";
-      } 
+      // 상세 조회 페이지 주소 : /board/{boardCode}/{boardNo}
+      // 삭제 요청 주소 : /editBoard/{boardCode}/{boardNo}/delete (GET)
 
-   });
+      location.href 
+        = location.pathname.replace("board","editBoard") + "/delete"; 
+
+    }
+  });
 }
 
+// ---------------------------------------------------------
 
+/* 수정 버튼 클릭 시 수정 화면 요청 */
 const updateBtn = document.getElementById("updateBtn");
 
-if(updateBtn != null) {
-    updateBtn.addEventListener("click", () => {
+if(updateBtn != null){ // 수정 버튼 존재 시
+  updateBtn.addEventListener('click', ()=>{
 
-      let url = `/editBoard/${boardCode}/${boardNo}/update${location.search}`
-      // /board/{boardCode}/{boardNo}?cp=1
+    //    /board/{boardCode}/{booardNo}?cp=1
+    //    /editBoard/{boardCode}/{booardNo}/update?cp=1
 
-      location.href = url;
-
-  });  
-
-
-
+    let url = `/editBoard/${boardCode}/${boardNo}/update${location.search}`;
+    location.href = url;
+  });
 }
-
