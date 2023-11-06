@@ -4,7 +4,6 @@ const boardLike = document.querySelector("#boardLike");
 // 좋아요 버튼 클릭 시(이벤트 리스너 추가)
 boardLike.addEventListener("click", e => {
 
-
   // 1. 로그인 여부 확인 (로그인한 회원만 좋아요를 누를 수 있다!)
 
   // *** 로그인 여부 확인 방법 ***
@@ -25,8 +24,6 @@ boardLike.addEventListener("click", e => {
   // 2. 기존 좋아요 상태 확인
   let check;
 
-  
-
   // "fa-regular" : 비어있는 하트
   // "fa-solid" : 채워져 있는 하트
   // 클릭한 하트에 class 속성 값으로 "fa-regular"가 있으면 true
@@ -35,7 +32,6 @@ boardLike.addEventListener("click", e => {
   } else{
     check = 1;
   }
-
 
   // 3. ajax 구문 작성
 
@@ -74,9 +70,6 @@ boardLike.addEventListener("click", e => {
 /* 목록으로 버튼 */
 
 const goToListBtn = document.getElementById("goToListBtn");
-
-goToListBtn.addEventListener("click", goToListFn);
-
 
 if(goToListBtn != null){ // 화면에 목록으로 버튼이 있을 때만 수행
   
@@ -159,4 +152,3 @@ if(updateBtn != null) {
 
 
 }
-
