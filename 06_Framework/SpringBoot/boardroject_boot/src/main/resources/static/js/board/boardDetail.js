@@ -143,3 +143,21 @@ if(deleteBtn != null) {
 
    });
 }
+
+
+const updateBtn = document.getElementById("updateBtn");
+
+if(updateBtn != null) {
+    updateBtn.addEventListener("click", () => {
+
+      let url = `/editBoard/${boardCode}/${boardNo}/update${location.search}`
+      // /board/{boardCode}/{boardNo}?cp=1
+
+      location.href = url;
+
+  });  
+
+
+
+}
+

@@ -91,7 +91,6 @@ if(imageInput != null) { // imageInput이 존재할 때
 
             return;
 
-
         }
 
         // ------- 선택된 파일의 크기가 지정된 크기를 초과하는 경우 --------

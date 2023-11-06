@@ -229,20 +229,20 @@ public class BoardController {
 			}
 
 			// ----------------------------------------------------
-		}    if (board.getImageList().size() > 0) {
+			
+			if (board.getImageList().size() > 0) {
 
-            BoardImg thumbnail = null;
-            if (board.getImageList().get(0).getImgOrder() == 0) {
-               thumbnail = board.getImageList().get(0);
-            }
+	            BoardImg thumbnail = null;
+	            
+	            if (board.getImageList().get(0).getImgOrder() == 0) {
+	               thumbnail = board.getImageList().get(0);
+	            }
 
-            model.addAttribute("thumbnail", thumbnail);
-            model.addAttribute("start", thumbnail != null ? 1 : 0);
-//            model.addAttribute("start", board.getThumbnail() != null ? 1 : 0);
-    
-		}
-         
-         // 썸네일이 있을 경우 1, 없으면 0을 start로 세팅
+	            model.addAttribute("thumbnail", thumbnail);
+	            model.addAttribute("start", thumbnail != null ? 1 : 0);
+			}
+		}    
+		
 		
 		else {
 			path = "redirect:/board/" + boardCode;
