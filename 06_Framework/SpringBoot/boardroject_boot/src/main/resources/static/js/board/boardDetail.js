@@ -4,7 +4,6 @@ const boardLike = document.querySelector("#boardLike");
 // 좋아요 버튼 클릭 시(이벤트 리스너 추가)
 boardLike.addEventListener("click", e => {
 
-});
 
   // 1. 로그인 여부 확인 (로그인한 회원만 좋아요를 누를 수 있다!)
 
