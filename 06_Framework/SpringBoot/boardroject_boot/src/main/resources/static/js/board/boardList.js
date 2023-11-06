@@ -18,5 +18,12 @@ const insertBtn = document.getElementById("insertBtn");
    };
 
 
+// 요청 주소 : /editBoard/{boardCode}/insert
+
+
+
+
+
+
 
 

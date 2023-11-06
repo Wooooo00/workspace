@@ -1,6 +1,6 @@
 package edu.kh.project.common.config;
 
-import org.springframework.beans.factory.annotation.Value; 
+import org.springframework.beans.factory.annotation.Value;  
 import org.springframework.boot.web.servlet.MultipartConfigFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -59,7 +59,7 @@ public class FileConfig implements WebMvcConfigurer {
 		//	file:///C:/workspace/project-resources/pdf/
 		
 		registry.addResourceHandler("/pdf/**")
-		.addResourceLocations("file:///C:/workspace/project-resources/pdf/");
+		.addResourceLocations("/Users/chang-u/Documents/workspace-main/project-resources/pdf");
 
 		
 	}

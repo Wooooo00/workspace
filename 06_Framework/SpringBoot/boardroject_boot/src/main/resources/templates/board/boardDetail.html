@@ -81,7 +81,7 @@
                       조회 되었을 때 IMG_ORDER가 0인 이미지가
                       imageList [0]에 저장 되었을 것이다
               -->
-              <th:bloack th:if="${thumbnail}">
+              <th:block th:if="${thumbnail}">
                   <h5>썸네일</h5>
                   <div class="img-box">
                       <div class="boardImg thumbnail">
@@ -90,7 +90,7 @@
                               th:download="${thumbnail.imgOriginalName}">다운로드</a>         
                       </div>
                   </div>
-              </th:bloack>
+              </th:block>
 
               <!-- 일반 이미지가 있을 경우 -->
               <th:block th:if="${#lists.size(board.imageList) > start}" >
@@ -149,6 +149,13 @@
 
 
     <script th:inline="javascript">
+
+    // <script th:inline="javascripit">
+
+        // const boardNo = /*[[${boardNo}]]*/ 
+        // const boardCode = /*[[boardCode]]*/
+
+        
 
         /****** JS 파일에서 사용할 값을 전역 변수로 선언 ******/
         

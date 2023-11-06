@@ -1,8 +1,7 @@
 package edu.kh.project.admin.controller;
 
-import java.util.List;
+import java.util.List; 
 
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,12 +20,8 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping("admin")
 public class AdminController {
 	
-	// @Controller, // 인터페이스 상속, 리퀘스트 매핑 
-	
-	
 	@Autowired
 	private AdminService service;
-	
 	
 	/** 관리자 메인 페이지
 	 * @return "admin/admin-main"
@@ -41,7 +36,6 @@ public class AdminController {
 	}
 	
 	
-
 	@GetMapping("selectMember")
 	public String selectMember(String inputEmail, Model model) {
 		
@@ -62,36 +56,32 @@ public class AdminController {
 	}
 	
 	
-	// 회원 전체 조회
 	
-	
-	// adminall
-	/**
-	 * @param model
+	/** 회원 전체 조회
+	 * @param model : 데이터 전달(request scope)
 	 * @return
 	 */
 	@GetMapping("selectAll")
 	public String selectAll(Model model) {
 		
-		// Collection 
+		// Collection : Java 자료구조 모음(List, Set, Map)
 		List<Member> memberList = service.selectAll();
 		
 		// 조회 결과를 request scope로 전달
 		model.addAttribute("memberList", memberList);
 		
 		return "admin/selectAll";
-		
 	}
+	
 	
 	
 	/** 전체 회원 조회(+정렬)
 	 * @param model : 데이터 전달 객체
 	 * @return
 	 */
-	
 	@GetMapping("selectSort")
-	public String selectSort(Model model, 
-			@RequestParam(value="sort", required=false, defaultValue = "1") int sort ) {
+	public String selectSort(Model model,
+		@RequestParam(value="sort", required=false, defaultValue="1") int sort ) {
 		
 		List<Member> memberList = service.selectSort(sort);
 		
@@ -100,71 +90,85 @@ public class AdminController {
 		return "admin/selectSort";
 	}
 	
-//	/** 회원 복구
-//	 * @return
-//	 * @param 회원 번호, 이메일
-//	 * @return result
-//	   @param ra : 리다이렉트 데이터 전달
-//	 */
 	
 	
 	
+	
+	/** 회원 복구
+	 * @param memberNo : 회원 번호
+	 * @param memberEmail : 회원 이메일
+	 * @param ra : 리다이렉트 시 데이터 전달
+	 * @return
+	 */
 	@PostMapping("restoration")
-	 public String restoration(int memberNo, String memberEmail,
-			 RedirectAttributes ra) {
+	public String restoration(
+		int memberNo, String memberEmail, 
+		RedirectAttributes ra) {
 		
 		int result = service.restoration(memberNo);
 		
 		if(result > 0) {
-			ra.addFlashAttribute("message", "복구 성공");
-			
-		} else {
-			ra.addFlashAttribute("message", "복구 실패");
+			ra.addFlashAttribute("message", "복구 성공!!");
+		}else {
+			ra.addFlashAttribute("message", "복구 실패...");
 		}
 		
+		// selectMember?inputEmail=test06@kh.com
 		return "redirect:selectMember?inputEmail=" + memberEmail;
-		
 	}
+	
 	
 	@PostMapping("changeAuthority")
-	public String changeAuthority(int memberNo, String memberEmail,
-			 RedirectAttributes ra ) { 
-		
-		
+	public String changeAuthority(
+			int memberNo, String memberEmail, 
+			RedirectAttributes ra) {
+	
 		int result = service.changeAuthority(memberNo);
 		
-		if(result> 0) {
-			ra.addFlashAttribute("message", "권한이 변경 되었습니다");
-			
-		} else { 
-			ra.addFlashAttribute("message", "권한 변경 실패");
+		if(result > 0) {
+			ra.addFlashAttribute("message", "변경 성공!!");
+		}else {
+			ra.addFlashAttribute("message", "변경 실패...");
 		}
 		
 		return "redirect:selectMember?inputEmail=" + memberEmail;
 	}
 	
+	
+	
+	/** 비밀번호를 "1234"(암호화 진행!) 로 초기화
+	 * @return
+	 */
 	@PostMapping("initPw")
-	public String initPw(int memberNo, String memberEmail, 
-			RedirectAttributes ra) {
+	public String initPw(
+		int memberNo,     String memberEmail,
+		RedirectAttributes ra) {
 		
+		// 서비스 호출
 		int result = service.initPw(memberNo);
 		
-		if(result> 0) {
-			ra.addFlashAttribute("message", "비밀번호가 초기화 되었습니다");
-			
-		} else { 
-			ra.addFlashAttribute("message", "비밀번호 초기화 실패하였습니다");
+		if(result > 0) {
+			ra.addFlashAttribute("message", "초기화 성공!!!");
+		}else {
+			ra.addFlashAttribute("message", "초기화 실패...");
 		}
 		
 		return "redirect:selectMember?inputEmail=" + memberEmail;
-		
 	}
 	
-	// ----------------------------------------------------------------
+	
+	
+	// -----------------------------------------------------------------
 	
 	@GetMapping("ajaxTest")
 	public String ajaxTest() {
 		return "admin/ajaxTest";
 	}
+	
+	
+	
+	
+	
+	
 	
 }
