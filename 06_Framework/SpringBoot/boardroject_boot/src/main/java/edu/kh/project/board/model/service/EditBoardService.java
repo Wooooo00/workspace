@@ -14,6 +14,8 @@ public interface EditBoardService {
 
 	int insertBoard(Board board, List<MultipartFile> images) 
 			throws IllegalStateException, IOException;
+
+	int updateBoard(Board board, List<MultipartFile> images, String deleteOrder) throws IllegalStateException, IOException;
 	
 	
 
