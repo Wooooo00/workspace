@@ -4,7 +4,7 @@ import java.util.Map;
 
 import edu.kh.project.board.model.dto.Board;
 
-/** @param
+/** @param 
  * 
  */
 /**
@@ -13,7 +13,19 @@ import edu.kh.project.board.model.dto.Board;
 public interface BoardService {
 
 	Map<String, Object> selectBoardList(int boardCode, int cp);
+	
+	
+	
 
+	/** 검색 목록 조회
+	 * @param paramMap
+	 * @param cp
+	 * @return
+	 */
+	Map<String, Object> searchBoardList(Map<String, Object> paramMap, int cp);
+	
+	
+	
 	Board boardDetail(Map<String, Object> map);
 
 	int likeCheck(Map<String, Object> map);
@@ -28,6 +40,7 @@ public interface BoardService {
 	int like(Map<String, Object> paramMap);
 
 	int updateReadCount(int boardNo);
+
 
 	
 }

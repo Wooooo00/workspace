@@ -638,7 +638,16 @@ SELECT SEQ_IMG_NO.NEXTVAL, '경로3', '변경된 이름3', '원본이름3', 3, 1
 
 ROLLBACK;
 
-            
-       
+DELETE FROM "BOARD_IMG"
+WHERE BOARD_NO = #{boardNo}
+AND IMG_ORDER IN (0,1,2,3);
+
+SELECT * FROM BOARD_IMG
+
+
+
+
+
+
 
 

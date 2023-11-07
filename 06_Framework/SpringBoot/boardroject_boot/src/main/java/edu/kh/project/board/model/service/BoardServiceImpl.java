@@ -67,6 +67,37 @@ public class BoardServiceImpl implements BoardService{
 		return map;
 	}
 	
+	// 검색 조건 일치 게시글 수 조회
+	
+	@Override
+	public Map<String, Object> searchBoardList(Map<String, Object> paramMap, int cp) {
+		// TODO Auto-generated method stub
+		
+		int listCount = mapper.searchListCount(paramMap);
+		// 
+		Pagination pagination = new Pagination(cp, listCount);
+		
+		int offset = (pagination.getCurrentPage() - 1) * pagination.getLimit();
+		
+		int limit = pagination.getLimit();
+		
+		RowBounds rowbounds = new RowBounds(offset, limit);
+		
+		// 게시글 일치 게시글 목록 조회
+		List<Board> boardList = mapper.searchBoardList(paramMap, rowbounds);
+		
+		
+		// Map에 담아서 반환
+		Map<String, Object> map = new HashMap<>();
+		map.put("boardList", boardList);
+		map.put("pagination", pagination);
+		
+		return map;
+		
+	}
+	
+	
+	
 	// 
 	@Override
 	public Board boardDetail(Map<String, Object> map) {

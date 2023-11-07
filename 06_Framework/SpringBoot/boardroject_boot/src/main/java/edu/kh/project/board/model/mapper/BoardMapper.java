@@ -29,5 +29,12 @@ public interface BoardMapper {
 	int countBoardLike(Integer integer);
 
 	int updateReadCount(int boardNo);
+
+	
+	// 검색어 일치 게시글 수 조회
+	int searchListCount(Map<String, Object> paramMap);
+	
+	// 검색어 일치 게시글 목록 조회
+	List<Board> searchBoardList(Map<String, Object> paramMap, RowBounds rowbounds);
 	;
 }
