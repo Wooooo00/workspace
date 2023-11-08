@@ -36,7 +36,6 @@
 		${} : 출력값 그대로 출력
 		--> 
 		
-		
 		SELECT MEMBER_NO, MEMBER_EMAIL, MEMBER_DEL_FL
 		FROM "MEMBER" 
 		ORDER BY ${query}
