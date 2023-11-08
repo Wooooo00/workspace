@@ -46,6 +46,23 @@
 			 
 		
 	</insert> 
+	
+	<!-- 댓글 수정 -->
+	<update id="update">
+		UPDATE "COMMENT" SET 
+		COMMENT_CONTENT = #{commentContent}
+		WHERE COMMENT_NO = #{commentNo}
+		
+	</update>
+	
+	
+	<!-- 댓글 삭제 -->
+	<update id="delete">
+		UPDATE "COMMENT" SET 
+		COMMENT_DEL_FL = 'Y'
+		WHERE COMMENT_NO = #{commentNo}
+	</update>
+	
 		
 		
 		

@@ -31,4 +31,17 @@ public class CommentServiceImpl implements CommentService{
 		return mapper.insert(comment);
 	}
 	
+	// 댓글 수정
+	@Override
+	public int update(Comment comment) {
+		// TODO Auto-generated method stub
+		return mapper.update(comment);
+	}
+	
+	// 댓글 삭제
+	@Override
+	public int delete(int commentNo) {
+		// TODO Auto-generated method stub
+		return mapper.delete(commentNo);
+	}
 }
