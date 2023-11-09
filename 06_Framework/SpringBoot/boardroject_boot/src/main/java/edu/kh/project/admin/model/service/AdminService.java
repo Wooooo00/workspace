@@ -1,6 +1,6 @@
 package edu.kh.project.admin.model.service;
 
-import java.util.List;
+import java.util.List; 
 
 import edu.kh.project.member.model.dto.Member;
 
