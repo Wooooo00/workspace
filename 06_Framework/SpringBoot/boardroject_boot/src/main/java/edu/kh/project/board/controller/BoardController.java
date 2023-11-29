@@ -1,6 +1,6 @@
 package edu.kh.project.board.controller;
 
-import java.text.ParseException;
+import java.text.ParseException; 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -58,7 +58,12 @@ public class BoardController {
 	 * @param paramMap  : 모든 파라미터 키, 쿼리
 	 * @return
 	 */
-
+	
+	// ex) board/1, board/2
+	// jisik/jisikList/ 
+	
+	
+	
 	@GetMapping("{boardCode:[0-9]+}")
 	public String selectBoardList(@PathVariable("boardCode") int boardCode, Model model,
 			@RequestParam(value = "cp", required = false, defaultValue = "1") int cp,

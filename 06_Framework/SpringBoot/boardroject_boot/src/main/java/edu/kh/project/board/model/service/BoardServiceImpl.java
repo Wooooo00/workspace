@@ -1,6 +1,6 @@
 package edu.kh.project.board.model.service;
 
-import java.util.HashMap;
+import java.util.HashMap; 
 import java.util.List;
 import java.util.Map;
 
@@ -145,11 +145,6 @@ public class BoardServiceImpl implements BoardService{
 	public int updateReadCount(int boardNo) {
 		// TODO Auto-generated method stub
 		return mapper.updateReadCount(boardNo);
-	}
-	
-	@Override
-	public List<Map<String, Object>> selectBoardTypeList() {
-		return mapper.selectBoardTypeList();
 	}
 	
 }
