@@ -1,6 +1,6 @@
 package edu.kh.project.board.model.mapper;
 
-import java.util.List;  
+import java.util.List;   
 import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
@@ -36,5 +36,7 @@ public interface BoardMapper {
 	
 	// 검색어 일치 게시글 목록 조회
 	List<Board> searchBoardList(Map<String, Object> paramMap, RowBounds rowbounds);
-	;
+
+	List<Map<String, Object>> selectBoardTypeList();
+	
 }

@@ -147,4 +147,9 @@ public class BoardServiceImpl implements BoardService{
 		return mapper.updateReadCount(boardNo);
 	}
 	
+	@Override
+	public List<Map<String, Object>> selectBoardTypeList() {
+		return mapper.selectBoardTypeList();
+	}
+	
 }
