@@ -30,11 +30,11 @@ h1 {
 }
 
 .select-all{
+   font-size: 14px;
    margin-top: 80px;
    border-bottom: solid rgb(217, 217, 217) 1px;
    padding: 15px 0px;
    align-items: center;
-
 }
 
 .select-all > span{
@@ -42,6 +42,7 @@ h1 {
 }
 
 .item-list{
+   font-size: 14px;
    height: 142px;
     /* display: flex; */
     -webkit-box-align: center;
@@ -50,6 +51,11 @@ h1 {
     border-bottom: solid rgb(217, 217, 217) 1px;
 }
 
+.item-name > a{
+   text-decoration: none;
+   font-size: 14px;
+   color: black;
+}
 .item-name{
    margin-left: 10px;
    position: absolute;
@@ -64,6 +70,8 @@ h1 {
    font-size: 14px;
    color:rgb(217, 217, 217);
 }
+
+
 
 .item-amount{
    top: 10px;
@@ -87,11 +95,11 @@ h1 {
    margin-top: 10px;
    border-bottom: solid rgb(217, 217, 217) 1px;
    position: relative;
-   font-size: 16px;
+   font-size: 14px;
 }
 
 .check-price{
-   font-size: 16px;
+   font-size: 14px;
    margin-left: 4px;
 }
 
@@ -101,23 +109,44 @@ h1 {
 }
 
 .order-list{
-   height: 140px;
+   height: 170px;
    margin: 10px 0 0 4px;
    border-bottom: solid rgb(217, 217, 217) 1px;
-   margin-bottom: 8px;
 }
 
 .order-input{
    font-size: 14px;
 }
+
 .name-input-area{
    margin-bottom: 6px;
 }
 
+.name-input{
+   margin: 6px 0 0 0;
+}
+
+.phonenumber-input{
+   margin: 6px 0 0 0;
+}
 .order-input{
    margin-top: 20px;
 }
 
+.address-input > input{
+   width: 280px;
+   margin: 6px 0 0 0;
+}
+
+.address-detail > input{
+   width: 280px;
+   margin: 6px 0 0 0;
+}
+
+.address-detail{
+   width: 280px;
+   margin: 6px 0 0 0;
+}
 .name-btn{
    margin: 0 0 0 6px;
    border-radius: 4px;

@@ -83,7 +83,7 @@
                <span class="item-amount">수량: 3</span>
              
                <!-- 개별 상품 가격 -->
-               <span class="item-price" style="font-weight: bold;">$132</span>
+               <span class="item-price" style="font-weight: bold;">$300</span>
 
             </div>
 
@@ -96,7 +96,7 @@
                   
                   <div>
                      <span class="check-price">총 상품 가격(2장)</span>
-                     <span class="check-total" style="font-weight: bold;">$132</span>
+                     <span class="check-total" style="font-weight: bold;">$500</span>
                   </div>
                   
                         <!-- 개별 상품 가격 -->
@@ -119,14 +119,14 @@
                         <div class="name-input-area">
                            주문자 명
                            <div class="name-input">
-                              <input type="text">
+                              <input type="text" placeholder="*필수 작성 항목입니다.">
                            </div>
                         </div>
 
                         <div class="phonenumber-input-area">
                            전화번호
                            <div class="phonenumber-input">
-                              <input type="text"> 
+                              <input type="text" placeholder="*필수 작성 항목입니다."> 
                            </div>
                         </div>
 
@@ -148,18 +148,18 @@
                   <div class="order-input">
 
                      <div class="name-input-area">
-                        도로주소 & 지번
+                        도로명 주소
                         <button class="name-btn">주소 찾기</button>
-                     <div class="name-input">
-                           <input type="text">
+                     <div class="address-input">
+                           <input type="text" placeholder="*필수 작성 항목입니다.">
                         </div>
                      </div>
 
                      <div class="phonenumber-input-area">
                         상세주소
                         
-                        <div class="phonenumber-input">
-                           <input type="text"> 
+                        <div class="address-detail">
+                           <input type="text" placeholder="*필수 작성 항목입니다."> 
                         </div>
                      </div>
 
@@ -174,10 +174,10 @@
                <span class="detail-price" style="font-weight: bold;">결제 금액</span>
 
                   <div class="detail">
-                     <span class="product-price">상품 가격 </span> <span>100$</span>
+                     <span class="product-price" style="font-size: 14px;">상품 가격 </span> <span style="font-size: 14px;">100$</span>
 
-                      <div class="shipping-price">배송비
-                        <span>12$</span>
+                      <div class="shipping-price" style="font-size: 14px;">배송비
+                        <span style="font-size: 14px;">12$</span>
                       </div>
                   </div>
 
@@ -218,10 +218,10 @@
                               카카오 페이
                            </div>
 
-                           <div>
+                           <div class="select-kakao">
                               <span> <i class="fa-regular fa-circle"></i> </span>
-                           </div>
                               <span> <img class="kakaopay" src="/src/main/resources/static/images/카카오페이.png" alt=""> </span>
+                           </div>
                               
                         </div>
                            
@@ -234,16 +234,15 @@
                               신용카드
                            </div>
 
-                           <div>
+                           <div select-credit>
                               <span> <i class="fa-regular fa-circle"></i> </span>
+                              <img class="visa" src="/src/main/resources/static/images/imageImgCardVisa@3x.png" alt="">
                            </div>
-                              
-                           <img class="visa" src="/src/main/resources/static/images/imageImgCardVisa@3x.png" alt="">
                               
                         </div>
                      
                         <div class="cash">
-                           무통장 입금
+                           입금
                         </div>
 
                      </div>

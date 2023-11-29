@@ -18,14 +18,6 @@
    position: relative;
 }
 
-.frame{
-    /* max-width: calc(var(--layout-max-width) + var(--layout-padding) * 2); */
-}
-
-.content{
-   /* margin: auto; */
-
-}
 h1 {
    display: block;
    font-size: 28px;
@@ -38,6 +30,8 @@ h1 {
 }
 
 .select-all{
+   font-size: 14px;
+   margin-top: 80px;
    border-bottom: solid rgb(217, 217, 217) 1px;
    padding: 15px 0px;
    align-items: center;
@@ -45,14 +39,11 @@ h1 {
 }
 
 .select-all > span{
-   margin-left: 54px;
+   margin-left: 46px;
 }
 
-/* #item-info{
-   display: inline-flex;
-} */
-
 .item-list{
+   font-size: 14px;
    height: 142px;
     /* display: flex; */
     -webkit-box-align: center;
@@ -61,42 +52,143 @@ h1 {
     border-bottom: solid rgb(217, 217, 217) 1px;
 }
 
+.item-name{
+   margin-left: 10px;
+   position: absolute;
+   top: 10px;
+}
+
+.item-option{
+   margin-left: 10px;
+   margin-top: 2px;
+   top: 30px;
+   position: absolute;
+   font-size: 14px;
+   color:rgb(217, 217, 217);
+}
+
+.item-name > a{
+   text-decoration: none;
+   font-size: 14px;
+   color: black;
+}
+
+.item-amount{
+   top: 10px;
+   position: absolute;
+   right: 250px;  
+}
+
+.item-price{
+   top: 10px;
+   position: absolute;
+   right: 8px;
+}
+
 .item-list>.item-text {
    display: inline-block;
    align-items: flex-start;
 }
-/* 
-.item-list > img-area{
-      display: inline-block;
-      flex-shrink: 0;
-      margin-right: 2px;
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
-} */
 
-/* #img-area{
-   display: inline-block;
-   flex-shrink: 0;
-   margin-right: 2px;
-   width: 100px;
+.check-list{
+   height: 58px;
+   margin-top: 10px;
+   border-bottom: solid rgb(217, 217, 217) 1px;
+   position: relative;
+   font-size: 16px;
+}
+
+.check-price{
+   font-size: 16px;
+   margin-left: 4px;
+}
+
+.check-total{
+   position: absolute;
+   right: 8px;
+}
+
+.order-list{
    height: 100px;
-   object-fit: cover;
-} */
+   margin: 10px 0 0 4px;
+   border-bottom: solid rgb(217, 217, 217) 1px;
+}
+
+.order-input{
+   font-size: 14px;
+}
+
+.name-input-area{
+   margin-bottom: 6px;
+}
+
+.name-input{
+   margin: 6px 0 0 0;
+}
+
+.phonenumber-input{
+   margin: 6px 0 0 0;
+}
+.order-input{
+   margin-top: 20px;
+}
+
+.address-input > input{
+   width: 280px;
+   margin: 6px 0 0 0;
+}
+
+.address-detail > input{
+   width: 280px;
+   margin: 6px 0 0 0;
+}
+
+.address-detail{
+   width: 280px;
+   margin: 6px 0 0 0;
+}
+.name-btn{
+   margin: 0 0 0 6px;
+   border-radius: 4px;
+    transition: all 300ms ease 0s;
+    appearance: none;
+    background: none;
+    cursor: pointer;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 24px;
+    font-size: 14px;
+    border: 1px solid rgb(173, 177, 184);
+    color: rgb(135, 142, 150);
+    width: auto;
+    display: inline-flex;
+}
+
+.price-detail{
+   height: 80px;
+   position: relative;
+   margin: 10px 0 0 4px;
+   border-bottom: solid rgb(217, 217, 217) 1px;
+
+
+}
+
+.detail{
+   position: absolute;
+   right: 10px;
+}
+
+.price-detail > span{
+   right:0;
+}
 
 .item-list>img{
-   margin-left: 14px;
    width: 140px;
    height: 140px;
    object-fit: cover;
 }
-
-/* .img-area > img {
-   display: inline-block;
-   flex-shrink: 0;
-   margin-right: 20px;
-   object-fit: cover;
-} */
 
 .total {
    background-color: rgb(255, 254, 237);
@@ -138,8 +230,8 @@ border-radius: 4px;
 
 .payment-method{
 
+   margin: 10px 0 0 4px;
    height: 300px;
-   /* display: flex; */
    -webkit-box-align: center;
    align-items: center;
    position: relative;
@@ -161,17 +253,24 @@ border-radius: 4px;
    border-bottom: solid rgb(217, 217, 217) 1px;
 }
 
-.payment-method> #img{
-justify-content: center;
-border-radius: 4px;
-margin: 10px 0;
-display: flex;
-width: 64px;
-height: 20px;
-object-fit: cover;
-overflow-clip-margin: content-box;
-overflow: clip;
-} 
+.kakaopay{
+   height: 22px;
+}
+
+.visa{
+   height: 32px;
+}
+
+.tou{
+   margin: 10px 0 0 4px;
+   font-size: 12px;
+}
+.checkout-area{
+   margin-top: 100px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
 
 .checkOut-btn{
    border-radius: 4px;
