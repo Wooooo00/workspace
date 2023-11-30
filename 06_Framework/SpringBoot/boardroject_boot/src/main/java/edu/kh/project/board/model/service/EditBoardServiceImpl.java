@@ -1,6 +1,6 @@
 package edu.kh.project.board.model.service;
 
-import java.io.File;  
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;

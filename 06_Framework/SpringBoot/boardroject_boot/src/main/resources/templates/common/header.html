@@ -75,11 +75,10 @@
 
 <nav>
     <ul>
-      
-        <!-- application scope에서 boardTypeList를 얻어와서 화면을 구현 -->
-        <li th:each="boardType : ${application.boardTypeList}">
-            <a th:href="@{/board/{boardCode}(boardCode = ${boardType.boardCode})}" th:text="${boardType.boardName}">게시판 이름</a>
-        </li>
+        <li><a href="/board/1">공지사항</a></li>
+        <li><a href="/board/2">자유 게시판</a></li>
+        <li><a href="/board/3">질문 게시판</a></li>
+        
 
         <!-- 로그인한 회원의 authority가 2인 경우에만 보여지도록 한다. -->
         <li th:if="${ session.loginMember != null && session.loginMember.authority == 2}">

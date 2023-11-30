@@ -51,7 +51,7 @@
 		- 반복되는 사이에 구분자(separator)를 추가할 수 있음.
 		
 		collection : 반복할 객체의 타입 작성(list, set, map...)
-		item : collection에서 순차적으로 꺼낸 하나의 요소를 저장하는 변수t
+		item : collection에서 순차적으로 꺼낸 하나의 요소를 저장하는 변수
 		index : 현재 반복 접근중인 인덱스 (0,1,2,3,4 ..)
 		
 		open : 반복 전에 출력할 sql

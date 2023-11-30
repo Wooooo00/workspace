@@ -1,6 +1,5 @@
 package edu.kh.project.board.model.service;
 
-import java.util.List;
 import java.util.Map; 
 
 import edu.kh.project.board.model.dto.Board;
@@ -41,11 +40,6 @@ public interface BoardService {
 	int like(Map<String, Object> paramMap);
 
 	int updateReadCount(int boardNo);
-
-
-
-
-	List<Map<String, Object>> selectBoardTypeList();
 
 
 	
