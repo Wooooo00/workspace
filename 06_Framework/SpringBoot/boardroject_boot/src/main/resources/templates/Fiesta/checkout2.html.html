@@ -11,7 +11,7 @@
 <body>
    <section class="frame">
 
-      <div class="content">
+      <div class="content"> 
 
          <div class="cart-area">
             <h1 class="cart">CHECKOUT</h1>
@@ -135,31 +135,29 @@
                </div>
                      
 
-         
- 
+               <div class="shipping-list">
 
-               <div class="order-list">
+                  <span class="shipping-name" style="font-weight: bold;">배송지</span>
 
-                  <span class="order-name" style="font-weight: bold;">배송지</span>
-
-                  <button class="name-btn">변경</button>
+                  <button class="shipping-btn">변경</button>
 
 
-                  <div class="order-input">
+                  <div class="shipping-input">
 
-                     <div class="name-input-area">
+                     <div class="shipping-address">
                         도로명 주소
-                        <button class="name-btn">주소 찾기</button>
+                        <button class="address-btn">주소 찾기</button>
+
                      <div class="address-input">
                            <input type="text" placeholder="*필수 작성 항목입니다.">
                         </div>
                      </div>
 
-                     <div class="phonenumber-input-area">
+                     <div class="address-detail">
                         상세주소
                         
-                        <div class="address-detail">
-                           <input type="text" placeholder="*필수 작성 항목입니다."> 
+                        <div class="input-detail">
+                           <input type="text" placeholder="*필수 작성 항목입니다." style="width: 280px;" height="24px"> 
                         </div>
                      </div>
 
@@ -201,9 +199,9 @@
 
                      
             <div class="total">
-               <span>총 결제 금액</span>
+               <div class="total-price" style="letter-spacing: -1.6px;">총 결제 금액</div>
 
-               <div class="sc-e98633bc-7 iUJKwp">$15.58</div>
+               <div class="sc-e98633bc-7 iUJKwp" style="letter-spacing: -1.2px;">$15.58</div>
             </div>
 
             
@@ -211,41 +209,41 @@
                <div class="payment-method">
                      <span class="ass" style="font-weight: bold;">결제 수단</span>
 
-                     <div class="method">
+                     <!-- <div class="method"> -->
 
-                        <div class="kakao">
+                        <!-- <div class="kakao">
                            <div>
                               카카오 페이
                            </div>
 
                            <div class="select-kakao">
                               <span> <i class="fa-regular fa-circle"></i> </span>
-                              <span> <img class="kakaopay" src="/src/main/resources/static/images/카카오페이.png" alt=""> </span>
+                              <span> <img class="kakaopay" src="/src/main/resources/static/images/KakaoTalk_Photo_2023-11-28-22-43-41.png" alt=""> </span>
                            </div>
                               
-                        </div>
+                        </div> -->
                            
                           
 <!--                           
                         </div> -->
 
-                        <div class="credit-card">
+                        <!-- <div class="credit-card">
                            <div>
                               신용카드
                            </div>
 
                            <div select-credit>
                               <span> <i class="fa-regular fa-circle"></i> </span>
-                              <img class="visa" src="/src/main/resources/static/images/imageImgCardVisa@3x.png" alt="">
+                              <img class="visa" src="/src/main/resources/static/images/KakaoTalk_Photo_2023-11-28-22-43-46.png" alt="">
                            </div>
                               
-                        </div>
+                        </div> -->
                      
                         <div class="cash">
-                           입금
+                           계좌 입금
                         </div>
 
-                     </div>
+                     <!-- </div> -->
                      
                   </div>
 
@@ -264,7 +262,8 @@
                      <button type="submit" class="checkOut-btn">결제하기</button>
 
                   </div>
-      </div>
+         
+            </div>
 
                
          

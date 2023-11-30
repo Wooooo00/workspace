@@ -11,10 +11,10 @@
 }
 
 .frame {
-   width: 1100px;
+   width: 1400px;
    min-height: 600px;
    margin:auto;
-   padding: 100px;
+   padding: 150px;
    position: relative;
 }
 
@@ -38,12 +38,12 @@ h1 {
 }
 
 .select-all > span{
-   margin-left: 46px;
+   margin-left: 32px;
 }
 
 .item-list{
    font-size: 14px;
-   height: 142px;
+   height: 120px;
     /* display: flex; */
     -webkit-box-align: center;
     align-items: center;
@@ -92,7 +92,7 @@ h1 {
 
 .check-list{
    height: 58px;
-   margin-top: 10px;
+   margin-top: 12px;
    border-bottom: solid rgb(217, 217, 217) 1px;
    position: relative;
    font-size: 14px;
@@ -100,7 +100,7 @@ h1 {
 
 .check-price{
    font-size: 14px;
-   margin-left: 4px;
+   margin-left: 12px;
 }
 
 .check-total{
@@ -108,45 +108,75 @@ h1 {
    right: 8px;
 }
 
+
+
 .order-list{
-   height: 170px;
-   margin: 10px 0 0 4px;
-   border-bottom: solid rgb(217, 217, 217) 1px;
+   margin: 32px 0 32px 16px;
+   /* border-bottom: solid rgb(217, 217, 217) 1px; */
 }
 
 .order-input{
    font-size: 14px;
+   margin-top: 44px;
 }
 
-.name-input-area{
-   margin-bottom: 6px;
+.name-input > input{
+   height: 24px;
 }
 
 .name-input{
-   margin: 6px 0 0 0;
+   margin: 10px 0 0 0;
+}
+
+.phonenumber-input > input{
+   height: 24px;
 }
 
 .phonenumber-input{
-   margin: 6px 0 0 0;
+
+   margin: 10px 0 0 0;
 }
-.order-input{
-   margin-top: 20px;
+
+.shipping-list{
+   
+   margin: 32px 0 32px 16px;
+   /* border-bottom: solid rgb(217, 217, 217) 1px; */
+}
+
+.shipping-input{
+   margin-top: 44px;
 }
 
 .address-input > input{
    width: 280px;
-   margin: 6px 0 0 0;
+   height: 24px;
+   margin: 10px 0 0 0;
+}
+
+.phonenumber-input-area{
+   margin-top: 32px;
 }
 
 .address-detail > input{
    width: 280px;
-   margin: 6px 0 0 0;
+   height: 24px;
+   margin: 10px 0 0 0;
+}
+
+.input-detail > input {
+   height: 24px;
+}
+
+.input-detail{
+   margin-top: 6px;
+   margin-bottom: 32px;
 }
 
 .address-detail{
    width: 280px;
-   margin: 6px 0 0 0;
+   margin: 32px 0 0 0; 
 }
+
 .name-btn{
    margin: 0 0 0 6px;
    border-radius: 4px;
@@ -166,10 +196,49 @@ h1 {
     display: inline-flex;
 }
 
+.shipping-btn{
+   margin: 0 0 0 6px;
+   border-radius: 4px;
+    transition: all 300ms ease 0s;
+    appearance: none;
+    background: none;
+    cursor: pointer;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 24px;
+    font-size: 14px;
+    border: 1px solid rgb(173, 177, 184);
+    color: rgb(135, 142, 150);
+    width: auto;
+    display: inline-flex;
+}
+
+.address-btn{
+   margin: 0 0 0 6px;
+   border-radius: 4px;
+    transition: all 300ms ease 0s;
+    appearance: none;
+    background: none;
+    cursor: pointer;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 24px;
+    font-size: 14px;
+    border: 1px solid rgb(173, 177, 184);
+    color: rgb(135, 142, 150);
+    width: auto;
+    display: inline-flex;
+}
+
 .price-detail{
+   
    height: 80px;
    position: relative;
-   margin: 10px 0 0 4px;
+   margin: 10px 0 0 16px;
    border-bottom: solid rgb(217, 217, 217) 1px;
 
 
@@ -185,23 +254,33 @@ h1 {
 }
 
 .item-list>img{
-   width: 140px;
-   height: 140px;
+   border-radius: 4px;
+   width: 118px;
+   height: 118px;
    object-fit: cover;
 }
 
-.total {
+
+.total{
    background-color: rgb(255, 254, 237);
    height: 80px;
    padding: 30px;
    display: flex;
    -webkit-box-pack: justify;
-   justify-content: space-between;
+   /* justify-content: space-between; */
    align-items: center;
    font-weight: 700;
-   font-size: 18px;
+   font-size: 20px;
    border-bottom: solid rgb(217, 217, 217) 1px;
+}
 
+.total > div{
+   letter-spacing: -1.2px;
+}
+
+.sc-e98633bc-7 {
+   position: absolute;
+   right: 174px;
 }
 
 .checkOut-btn {
@@ -230,8 +309,8 @@ border-radius: 4px;
 
 .payment-method{
 
-   margin: 10px 0 0 4px;
-   height: 300px;
+   margin: 32px 0 0 16px;
+   height: 80px;
    -webkit-box-align: center;
    align-items: center;
    position: relative;
@@ -262,7 +341,7 @@ border-radius: 4px;
 }
 
 .tou{
-   margin: 10px 0 0 4px;
+   margin: 12px 0 0 16px;
    font-size: 12px;
 }
 .checkout-area{
@@ -284,8 +363,8 @@ border-radius: 4px;
     justify-content: center;
     -webkit-box-align: center;
     align-items: center;
-    height: 36px;
-    font-size: 14px;
+    height: 40px;
+    font-size: 20px;
     font-weight: 500;
     --horizontal-padding: 1.8rem;
     color: rgb(255, 255, 255);
