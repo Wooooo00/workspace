@@ -43,6 +43,8 @@ h1 {
 * input{
    border: 1px solid rgb(173, 177, 184);
    outline-color: rgb(69, 106, 227);
+   margin-bottom: 44px;
+
 }
 
 /* 내용 영역 */
@@ -55,7 +57,7 @@ h1 {
    flex-direction: column;
 }
 
-.input-email > form{
+.input-ceo-name > input{
 
    border-radius: 4px;
    width: 400px;
@@ -63,7 +65,7 @@ h1 {
    transition-delay: 0ms;
 }
 
-.input-email > input{
+.input-company-name > input{
       
       border-radius: 4px;
       width: 400px;
@@ -71,27 +73,20 @@ h1 {
 
 }
 
-.input-authen > input{
-   border-radius: 4px;
-   width: 120px;
-   height: 32px;
-   
-}
-
-.input-pw > input {
+.input-company-address > input {
    border-radius: 4px;
    width: 400px;
    height: 42px;
 
 }
 
-.input-pw-check > input{
+.input-nickname > input{
    border-radius: 4px;
    width: 400px;
    height: 42px;
 }
 
-.input-nickname > input {
+.input-manager-number> input {
    border-radius: 4px;
    width: 400px;
    height: 42px;
@@ -109,25 +104,6 @@ h1 {
    height: 42px;
 }
 
-/* 인증번호 전송 버튼 */
-.authentification{
-   margin: 0 0 0 6px;
-   border-radius: 4px;
-    transition: all 300ms ease 0s;
-    appearance: none;
-    background: none;
-    cursor: pointer;
-    -webkit-box-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    align-items: center;
-    height: 24px;
-    font-size: 14px;
-    border: 1px solid rgb(173, 177, 184);
-    color: rgb(135, 142, 150);
-    width: auto;
-    display: inline-flex;
-}
 
 .address {
    margin: 0 0 0 6px;
@@ -149,7 +125,7 @@ h1 {
 }
 
 
-.checkOut-btn{
+.checkout-area > .checkOut-btn{
    border-radius: 4px;
     transition: all 300ms ease 0s;
     margin: 0px;
@@ -187,14 +163,11 @@ h1 {
    margin-bottom: 44px;
 }
 
-.input-nickname{
-   margin-bottom: 44px;
-}
 
-.input-address{
+/* .input-address{
    margin-bottom: 44px;
 }
 
 .input-address-detail{
    margin-bottom: 44px;
-}
+} */

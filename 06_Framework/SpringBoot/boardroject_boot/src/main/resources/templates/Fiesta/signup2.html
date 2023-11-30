@@ -4,19 +4,100 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Document</title>
+   <link rel="stylesheet" href="../Fiesta/signup2.css">
 </head>
 <body>
    <section class="frame">
 
+      <div class="signup-area">
+         <h1>회원가입</h1>
+      </div> 
       <div class="signup-page">
-         <div class="email-form">
-            <div></div>
+
+      
+            <!-- 이메일 -->
+            <form class="email-form"> 
+               <div class="input-email">     
+                     <input type="text" placeholder="이메일 입력">
+                  <button class="authentification">인증 번호 전송</button>
+               </div>
+            </form>
+
+            <!-- 인증 번호  -->
+            <form class="authen-form"> 
+               <div class="input-authen">
+                  <input type="text" placeholder="인증번호 입력">
+                  <span class="timer" style="font-size: 14px;"> 남은 시간 : 1:23 </span>
+                  <div class="not-null"> * 필수 작성 항목입니다. </div>
+               </div>
+            </form>
+
+             <!-- 비밀번호 -->
+             <form class="pw-form"> 
+               <div class="input-pw">
+                  <input type="password" placeholder="비밀번호 입력">
+                  
+                  <div class="not-null"> * 필수 작성 항목입니다. </div>
+               </div>
+            </form>
+
+            <form class="pw-check-form"> 
+               <div class="input-pw-check">
+                  <input type="text" placeholder="비밀번호 입력">
+                  
+                  <div class="not-null"> * 필수 작성 항목입니다. </div>
+               </div>
+            </form>
+
+            <form class="nickname-form"> 
+               <div class="input-nickname">
+                  <input type="text" placeholder="닉네임 입력">
+                  
+                  <div class="not-null"> * 3 ~ 10자리로 입력해주세요. </div>
+               </div>
+            </form>
+
+            <form class="address-form"> 
+               <div class="input-address">
+                  <input type="text" placeholder="주소 입력">
+                  <button class="address">주소 찾기</button>
+
+                  <div class="not-null"> * 필수 항목입니다. </div>
+               </div>
+            </form>
+
+            <form class="address-detail-form"> 
+               <div class="input-address-detail">
+                  <input type="text" placeholder="상세 주소">
+                  
+                  <div class="not-null"> * 필수 항목입니다. </div>
+               </div>
+            </form>
+               
+            <form class="gender">
+               성별 
+            </form>  
             
-            
+            <form class="checkout-area">
+
+               <button type="submit" class="checkOut-btn">회원가입</button>
+
+            </form>
+
          </div>
+               
+
+
+            
+
+
+            
+
          
          
       </div>
+      
+      
    </section>
 
 </body>

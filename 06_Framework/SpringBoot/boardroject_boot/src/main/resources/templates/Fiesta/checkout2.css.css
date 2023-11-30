@@ -10,6 +10,15 @@
    font-family: 'Pretendard-Regular';
 }
 
+* input {
+   font-size: 14px;
+   border: 1px solid rgb(173, 177, 184);
+   outline-color: rgb(69, 106, 227);
+   border-radius: 4px;
+   width: 320px !important;
+   height: 34px !important;
+}
+
 .frame {
    width: 1400px;
    min-height: 600px;
@@ -42,6 +51,7 @@ h1 {
 }
 
 .item-list{
+   font-weight: 500;
    font-size: 14px;
    height: 120px;
     /* display: flex; */
@@ -92,10 +102,9 @@ h1 {
 
 .check-list{
    height: 58px;
-   margin-top: 12px;
-   border-bottom: solid rgb(217, 217, 217) 1px;
+   margin: 20px 0 88px 6px;
    position: relative;
-   font-size: 14px;
+   font-size: 16px;
 }
 
 .check-price{
@@ -115,13 +124,25 @@ h1 {
    /* border-bottom: solid rgb(217, 217, 217) 1px; */
 }
 
+.order-list > .order-name{
+   font-size: 18px;
+   font-weight: 700;
+}
+
+.shipping-list > .shipping-name{
+   font-size: 18px;
+   font-weight: 700;
+}
+
 .order-input{
    font-size: 14px;
    margin-top: 44px;
 }
 
 .name-input > input{
-   height: 24px;
+   width: 120px;
+   height: 40px;
+
 }
 
 .name-input{
@@ -139,7 +160,7 @@ h1 {
 
 .shipping-list{
    
-   margin: 32px 0 32px 16px;
+   margin: 80px 0 32px 16px;
    /* border-bottom: solid rgb(217, 217, 217) 1px; */
 }
 
@@ -188,7 +209,7 @@ h1 {
     justify-content: center;
     -webkit-box-align: center;
     align-items: center;
-    height: 24px;
+    height: 28px;
     font-size: 14px;
     border: 1px solid rgb(173, 177, 184);
     color: rgb(135, 142, 150);
@@ -207,7 +228,7 @@ h1 {
     justify-content: center;
     -webkit-box-align: center;
     align-items: center;
-    height: 24px;
+    height: 28px;
     font-size: 14px;
     border: 1px solid rgb(173, 177, 184);
     color: rgb(135, 142, 150);
@@ -226,7 +247,7 @@ h1 {
     justify-content: center;
     -webkit-box-align: center;
     align-items: center;
-    height: 24px;
+    height: 28px;
     font-size: 14px;
     border: 1px solid rgb(173, 177, 184);
     color: rgb(135, 142, 150);
@@ -235,18 +256,14 @@ h1 {
 }
 
 .price-detail{
-   
-   height: 80px;
    position: relative;
-   margin: 10px 0 0 16px;
-   border-bottom: solid rgb(217, 217, 217) 1px;
-
-
+   margin: 100px 0 0 16px;
 }
 
 .detail{
+   right: 0;
+   top: 70px;
    position: absolute;
-   right: 10px;
 }
 
 .price-detail > span{
@@ -262,9 +279,9 @@ h1 {
 
 
 .total{
+   margin-top: 100px;
    background-color: rgb(255, 254, 237);
-   height: 80px;
-   padding: 30px;
+   padding: 20px;
    display: flex;
    -webkit-box-pack: justify;
    /* justify-content: space-between; */
@@ -342,7 +359,7 @@ border-radius: 4px;
 
 .tou{
    margin: 12px 0 0 16px;
-   font-size: 12px;
+   font-size: 14px;
 }
 .checkout-area{
    margin-top: 100px;
