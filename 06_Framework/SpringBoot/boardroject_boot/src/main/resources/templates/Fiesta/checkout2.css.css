@@ -15,8 +15,8 @@
    border: 1px solid rgb(173, 177, 184);
    outline-color: rgb(69, 106, 227);
    border-radius: 4px;
-   width: 320px !important;
-   height: 34px !important;
+   /* width: 320px !important;
+   height: 34px !important; */
 }
 
 .frame {
@@ -136,14 +136,18 @@ h1 {
 }
 
 .order-input{
+
    font-size: 14px;
    margin-top: 44px;
 }
 
 
 .name-input > input{
-   width: 120px;
-   height: 40px;
+   width: 320px;
+   height: 34px;
+   /* width: 120px;
+   height: 40px; */
+   margin-top: 2px;
 }
 
 
@@ -153,7 +157,11 @@ h1 {
 
 
 .phonenumber-input > input{
-   height: 24px;
+   width: 320px;
+   height: 34px;
+   /* width: 120px;
+   height: 40px; */
+   margin-top: 2px;
 }
 .phonenumber-input{
    margin: 10px 0 0 0;
@@ -171,24 +179,36 @@ h1 {
 }
 
 .address-input > input{
-   width: 280px;
+   /* width: 280px;
    height: 24px;
 
-   margin: 10px 0 0 0;
+   margin: 10px 0 0 0; */
+   width: 320px;
+   height: 34px;
+   /* width: 120px;
+   height: 40px; */
+   margin-top: 14px;
+
 }
 
 .phonenumber-input-area{
    margin-top: 32px;
 }
 
-.address-detail > input{
-   width: 280px;
-   height: 24px;
-   margin: 10px 0 0 0;
-}
+/* .address-detail > input{
+   width: 320px;
+   height: 34px; */
+   /* width: 120px;
+   height: 40px; */
+   /* margin-top: 2px;
+} */
 
 .input-detail > input {
-   height: 24px;
+   width: 320px;
+   height: 34px;
+   /* width: 120px;
+   height: 40px; */
+   margin-top: 2px;
 }
 
 .input-detail{
@@ -303,18 +323,19 @@ h1 {
 }
 
 .sc-e98633bc-7 {
-   position: absolute;
-   right: 174px;
+      right: 166px;
+      position: absolute;
+      letter-spacing: -1.2px;
 }
 
 .total > div{
    letter-spacing: -1.2px;
 }
 
-.sc-e98633bc-7 {
+/* .sc-e98633bc-7 {
    position: absolute;
    right: 128px;
-}
+} */
 
 .checkOut-btn {
 
@@ -364,6 +385,13 @@ border-radius: 4px;
    height: 80px;
    border-bottom: solid rgb(217, 217, 217) 1px;
 }
+
+.cash{
+
+   margin-top: 10px;
+}
+
+.cash > 
 
 .kakaopay{
    height: 22px;
